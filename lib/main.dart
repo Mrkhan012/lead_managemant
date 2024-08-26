@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lead_management/view/Account/account_screen.dart';
 import 'package:lead_management/view/home_screen.dart';
 
 void main() {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lead_management/utils/assets.dart';
 import 'package:lead_management/view/Account/account_screen.dart';
 import 'package:lead_management/view/class/class_page.dart';
 import 'package:lead_management/view/home/home_page.dart';
@@ -38,7 +39,7 @@ class _MyHomePageState extends State {
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icon/home.svg",
+              AppImages.home,
               height: 20,
               width: 20,
             ),
@@ -46,7 +47,7 @@ class _MyHomePageState extends State {
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icon/teacher.svg",
+              AppImages.clas,
               height: 20,
               width: 20,
             ),
@@ -54,7 +55,7 @@ class _MyHomePageState extends State {
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icon/radar.svg",
+              AppImages.livee,
               height: 20,
               width: 20,
             ),
@@ -62,7 +63,7 @@ class _MyHomePageState extends State {
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icon/chart.svg",
+              AppImages.leds,
               height: 20,
               width: 20,
             ),
