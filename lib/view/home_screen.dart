@@ -39,7 +39,7 @@ class _MyHomePageState extends State {
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              AppImages.home,
+              AppImages.hp,
               height: 20,
               width: 20,
             ),

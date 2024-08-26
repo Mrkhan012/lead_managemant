@@ -16,7 +16,7 @@ class AppImages {
   static const String facebook = 'assets/icon/facebook.svg';
   static const String twitter = 'assets/icon/twitter.svg';
   static const String copy = 'assets/icon/copy.svg';
-  static const String home = 'assets/icon/home.svg"';
+  static const String hp = 'assets/icon/home.svg';
   static const String clas = 'assets/icon/teacher.svg';
 
   static const String livee = 'assets/icon/live.svg';
