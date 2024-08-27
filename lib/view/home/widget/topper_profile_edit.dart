@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lead_management/utils/theme.dart';
 import 'package:lead_management/view/home/widget/cutom_textfrom.dart';
 
@@ -23,17 +24,18 @@ class TopperProfileEdit extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(12.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
-                  child: Text("Profile Image",
-                      style: theme.textTheme.labelMedium!)),
-              const SizedBox(
-                height: 8,
+                child: Text(
+                  "Profile Image",
+                  style: theme.textTheme.labelMedium!.copyWith(fontSize: 16.sp),
+                ),
               ),
+              SizedBox(height: 8.h),
               const Center(
                 child: Stack(
                   children: [
@@ -51,61 +53,54 @@ class TopperProfileEdit extends StatelessWidget {
                       child: CircleAvatar(
                         backgroundColor: Color(0xFF7D23E0),
                         radius: 14,
-                        // Corrected background color
                         child: Icon(
                           Icons.add,
-                          color: Colors.white, // Icon color
+                          color: Colors.white,
                           size: 14,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-              Text("Name of the Student*", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 8.h),
+              Text("Name of the Student*",
+                  style:
+                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
+              SizedBox(height: 8.h),
               CustomTextFormField(
                 hintText: 'Name',
                 onChanged: (value) {
                   print('Name: $value');
                 },
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text("School Name", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 10.h),
+              Text("School Name",
+                  style:
+                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
+              SizedBox(height: 8.h),
               CustomTextFormField(
                 hintText: 'School Name',
                 onChanged: (value) {
                   print('Name: $value');
                 },
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10.h),
               Text("Percentage/Marks Student got.",
-                  style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+                  style:
+                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
+              SizedBox(height: 8.h),
               CustomTextFormField(
                 hintText: 'Percentage',
                 onChanged: (value) {
                   print('Name: $value');
                 },
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text("Select the Subject", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 10.h),
+              Text("Select the Subject",
+                  style:
+                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
+              SizedBox(height: 8.h),
               CustomTextFormField(
                 hintText: 'Subject',
                 onChanged: (value) {
@@ -122,31 +117,24 @@ class TopperProfileEdit extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 60,
-              ),
+              SizedBox(height: 60.h),
               Center(
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Handle 'No' button action
-                      Navigator.pop(context); // Close bottom sheet
-                      // Add logic for 'No' button action here
+                      Navigator.pop(context); // Close the screen on save
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16,
-                      ),
-                      backgroundColor:
-                          const Color(0xFF7D23E0), // Background color
+                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      backgroundColor: const Color(0xFF7D23E0),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.r),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Save',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(fontSize: 14.sp, color: Colors.white),
                     ),
                   ),
                 ),
@@ -169,17 +157,16 @@ class TopperProfileEdit extends StatelessWidget {
       ),
       builder: (BuildContext context) {
         return Container(
-          height: 333, // Fixed height of the bottom sheet
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+          height: 333.h,
+          padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Select the Subject",
-                  style: theme.textTheme.labelMedium!.copyWith(fontSize: 18)),
-              const SizedBox(
-                height: 8,
-              ),
+                  style:
+                      theme.textTheme.labelMedium!.copyWith(fontSize: 18.sp)),
+              SizedBox(height: 8.h),
               _buildItem('Class 8th Physics'),
               const Divider(),
               _buildItem('Class 9th Physics'),
@@ -198,8 +185,9 @@ class TopperProfileEdit extends StatelessWidget {
 
   Widget _buildItem(String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text(text, style: theme.textTheme.labelMedium!),
+      padding: EdgeInsets.symmetric(vertical: 8.h),
+      child: Text(text,
+          style: theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
     );
   }
 }

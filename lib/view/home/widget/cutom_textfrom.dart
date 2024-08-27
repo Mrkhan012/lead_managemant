@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? hintText;
@@ -30,14 +31,13 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderSide:
               const BorderSide(color: Color(0xFFEEEEEE)), // Border color
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white), // Active color
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
         ),
-        contentPadding:
-            const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
       ),
     );
   }

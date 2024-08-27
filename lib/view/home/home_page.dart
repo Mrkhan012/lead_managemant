@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lead_management/utils/assets.dart';
 import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
@@ -28,35 +29,41 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.r), // Responsive padding
                 child: Row(
                   children: [
-                    //  accoout information
-                    Text(AccountScreenText.accountTitle,
-                        style: theme.textTheme.bodyLarge!),
-                    Text(AccountScreenText.accountNumber,
-                        style: theme.textTheme.bodySmall!),
-                    const SizedBox(
-                      width: 4,
+                    // Account information
+                    Text(
+                      AccountScreenText.accountTitle,
+                      style: theme.textTheme.bodyLarge!.copyWith(
+                        fontSize: 20.sp, // Responsive font size
+                      ),
                     ),
+                    SizedBox(width: 4.w), // Responsive spacing
+                    Text(
+                      AccountScreenText.accountNumber,
+                      style: theme.textTheme.bodySmall!.copyWith(
+                        fontSize: 14.sp, // Responsive font size
+                      ),
+                    ),
+                    SizedBox(width: 4.w), // Responsive spacing
                     SvgPicture.asset(
                       AppImages.copy,
-                      height: 20,
-                      width: 20,
+                      height: 20.h, // Responsive height
+                      width: 20.w, // Responsive width
                     ),
                   ],
                 ),
               ),
 
-              //  profile Details
+              // Profile Details
               buildAccountCard(
                 title: AccountScreenText.instituteName,
                 subtitle: AccountScreenText.joinedDate,
                 imagePath: AppImages.profile,
               ),
 
-              // section for Manage Coursed card
-
+              // Section for Manage Courses card
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -70,27 +77,26 @@ class HomePage extends StatelessWidget {
                   trailingIcon: CupertinoIcons.forward,
                 ),
               ),
-              // section for Category  card
 
+              // Section for Category card
               buildOption(
                 title: AccountScreenText.categoryServicesTitle,
                 subtitle: AccountScreenText.categoryServicesSubtitle,
                 leadingSvgPath: AppImages.service,
                 trailingIcon: CupertinoIcons.forward,
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              // section for enrolled students  card
 
+              SizedBox(height: 20.h), // Responsive height
+
+              // Section for Enrolled Students card
               buildOption(
                 title: AccountScreenText.enrolledStudentsTitle,
                 subtitle: AccountScreenText.enrolledStudentsSubtitle,
                 leadingSvgPath: AppImages.family,
                 trailingIcon: CupertinoIcons.forward,
               ),
-              // section for topper students  card
 
+              // Section for Topper Students card
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -104,8 +110,8 @@ class HomePage extends StatelessWidget {
                   trailingIcon: CupertinoIcons.forward,
                 ),
               ),
-              // section for Faculty  card
 
+              // Section for Faculty card
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(
@@ -121,12 +127,10 @@ class HomePage extends StatelessWidget {
                   trailingIcon: CupertinoIcons.forward,
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
 
-              // section for refer and earn  card
+              SizedBox(height: 20.h), // Responsive height
 
+              // Section for Refer and Earn card
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -140,54 +144,48 @@ class HomePage extends StatelessWidget {
                   trailingIcon: CupertinoIcons.forward,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 40,
-                  right: 34,
-                ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.w),
                 child: Divider(
-                  color: Color(0xFFEEEEEE),
-                  thickness: 1,
+                  color: const Color(0xFFEEEEEE),
+                  thickness: 1.r, // Responsive thickness
                 ),
               ),
-              // section for rate us  card
 
+              // Section for Rate Us card
               buildOption(
                 title: AccountScreenText.rateUsTitle,
                 subtitle: AccountScreenText.rateUsSubtitle,
                 leadingSvgPath: AppImages.star,
                 trailingIcon: CupertinoIcons.forward,
               ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 40,
-                  right: 34,
-                ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.w),
                 child: Divider(
-                  color: Color(0xFFEEEEEE),
-                  thickness: 1,
+                  color: const Color(0xFFEEEEEE),
+                  thickness: 1.r, // Responsive thickness
                 ),
               ),
-              // section for about ostello AI  card
 
+              // Section for About Ostello AI card
               buildOption(
                 title: AccountScreenText.aboutOstelloAITitle,
                 subtitle: AccountScreenText.aboutOstelloAISubtitle,
                 leadingSvgPath: AppImages.i,
                 trailingIcon: CupertinoIcons.forward,
               ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 40,
-                  right: 34,
-                ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.w),
                 child: Divider(
-                  color: Color(0xFFEEEEEE),
-                  thickness: 1,
+                  color: const Color(0xFFEEEEEE),
+                  thickness: 1.r, // Responsive thickness
                 ),
               ),
-              // section for Help and support  card
 
+              // Section for Help and Support card
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -201,60 +199,61 @@ class HomePage extends StatelessWidget {
                   trailingIcon: CupertinoIcons.forward,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 40,
-                  right: 34,
-                ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.w),
                 child: Divider(
-                  color: Color(0xFFEEEEEE),
-                  thickness: 1,
+                  color: const Color(0xFFEEEEEE),
+                  thickness: 1.r, // Responsive thickness
                 ),
               ),
-              // section for Manage Account  card
 
+              // Section for Manage Account card
               buildOption(
                 title: AccountScreenText.manageAccountTitle,
                 subtitle: AccountScreenText.manageAccountSubtitle,
                 leadingSvgPath: AppImages.settings,
                 trailingIcon: CupertinoIcons.forward,
               ),
-              const Divider(
-                color: Color(0xFFEEEEEE),
-                thickness: 1,
+
+              Divider(
+                color: const Color(0xFFEEEEEE),
+                thickness: 1.r, // Responsive thickness
               ),
 
-              //  Section for socail media etc
+              // Section for social media buttons
               Container(
                 color: const Color(0xFFFBFBFB),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(AccountScreenText.followUsSocialMedia,
-                          style: theme.textTheme.bodyLarge!
-                              .copyWith(fontSize: 16)),
+                      padding: EdgeInsets.all(8.r), // Responsive padding
+                      child: Text(
+                        AccountScreenText.followUsSocialMedia,
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                          fontSize: 16.sp, // Responsive font size
+                        ),
+                      ),
                     ),
-                    // section for instagram card
+
+                    // Section for Instagram card
                     buildbutton(
                       title: AccountScreenText.nowButton,
                       leadingSvgPath: AppImages.instagram,
                     ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    // section for facebook card
 
+                    SizedBox(height: 8.h), // Responsive height
+
+                    // Section for Facebook card
                     buildbutton(
                       title: AccountScreenText.nowButton_2,
                       leadingSvgPath: AppImages.facebook,
                     ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    // section for twitter card
 
+                    SizedBox(height: 8.h), // Responsive height
+
+                    // Section for Twitter card
                     buildbutton(
                       title: AccountScreenText.nowButton_3,
                       leadingSvgPath: AppImages.twitter,

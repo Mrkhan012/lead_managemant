@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lead_management/utils/theme.dart';
-import 'package:lead_management/view/home/widget/faculty_edit_profile.dart';
 import 'package:lead_management/view/home/widget/topper_profile_edit.dart';
 
 class TopFaculty extends StatelessWidget {
@@ -22,23 +22,25 @@ class TopFaculty extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Faculty',
               style: theme.textTheme.labelMedium!
-                  .copyWith(fontSize: 20, fontWeight: FontWeight.w700),
+                  .copyWith(fontSize: 20.sp, fontWeight: FontWeight.w700),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             Text(
-              'Add list of toppers from your coaching centre ifany\nThis adds huge credibility for your institute.',
-              style: theme.textTheme.bodySmall!,
+              'Add list of toppers from your coaching centre if any.\nThis adds huge credibility for your institute.',
+              style: theme.textTheme.bodySmall!
+                  .copyWith(fontSize: 14.sp), // Responsive font size
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h), // Responsive height
             ListView.builder(
               shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 3,
               itemBuilder: (context, index) {
                 final titles = [
@@ -67,18 +69,18 @@ class TopFaculty extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 16,
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16.h,
                     ),
-                    backgroundColor:
-                        const Color(0xFF7D23E0), // Background color
+                    backgroundColor: const Color(0xFF7D23E0),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(
+                          8.r), // Responsive border radius
                     ),
                   ),
-                  child: const Text(
+                  child: Text(
                     'Add New Student',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(fontSize: 14.sp, color: Colors.white),
                   ),
                 ),
               ),
@@ -98,56 +100,58 @@ class TopFaculty extends StatelessWidget {
     return Card(
       elevation: 2,
       color: Colors.white,
-      margin: const EdgeInsets.all(8),
+      margin: EdgeInsets.all(8.w), // Responsive margin
       child: ListTile(
         leading: CircleAvatar(
-          radius: 30,
+          radius: 30.r, // Responsive radius
           backgroundImage: AssetImage(imagePath),
         ),
         title: Row(
           children: [
-            Text(title, style: theme.textTheme.labelMedium!),
+            Text(
+              title,
+              style: theme.textTheme.labelMedium!
+                  .copyWith(fontSize: 16.sp), // Responsive font size
+            ),
           ],
         ),
         subtitle: Padding(
-          padding: const EdgeInsets.only(top: 4),
+          padding: EdgeInsets.only(top: 4.h), // Responsive padding
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.badge,
-                    size: 16,
+                    size: 16.w, // Responsive icon size
                   ),
-                  const SizedBox(
-                    width: 4,
+                  SizedBox(width: 4.w), // Responsive spacing
+                  Text(
+                    subtitle,
+                    style: theme.textTheme.labelMedium!
+                        .copyWith(fontSize: 14.sp), // Responsive font size
                   ),
-                  Text("70% CGPA", style: theme.textTheme.labelMedium!),
                 ],
               ),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 8.h), // Responsive spacing
               Row(
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.book_outlined,
-                    size: 16,
+                    size: 16.w, // Responsive icon size
                   ),
-                  const SizedBox(
-                    width: 4,
-                  ),
+                  SizedBox(width: 4.w), // Responsive spacing
                   _buildSubtitleContainer(
                     'English',
                     const Color(0xFFAFFFD0),
                   ),
-                  const SizedBox(width: 4),
+                  SizedBox(width: 4.w), // Responsive spacing
                   _buildSubtitleContainer(
                     'Math',
                     const Color(0xFFFFD8D8),
                   ),
-                  const SizedBox(width: 4),
+                  SizedBox(width: 4.w), // Responsive spacing
                   _buildSubtitleContainer(
                     'Science',
                     const Color(0xFFFFEFB4),
@@ -165,7 +169,11 @@ class TopFaculty extends StatelessWidget {
               ),
             );
           },
-          child: SvgPicture.asset("assets/icon/edit-2.svg"),
+          child: SvgPicture.asset(
+            "assets/icon/edit-2.svg",
+            width: 24.w, // Responsive width
+            height: 24.h, // Responsive height
+          ),
         ),
       ),
     );
@@ -173,16 +181,17 @@ class TopFaculty extends StatelessWidget {
 
   Widget _buildSubtitleContainer(String label, Color color) {
     return Container(
-      height: 24,
-      width: 48,
+      height: 24.h, // Responsive height
+      width: 48.w, // Responsive width
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r), // Responsive border radius
       ),
       child: Center(
         child: Text(
           label,
-          style: const TextStyle(fontSize: 10, color: Colors.black),
+          style: TextStyle(
+              fontSize: 10.sp, color: Colors.black), // Responsive font size
         ),
       ),
     );

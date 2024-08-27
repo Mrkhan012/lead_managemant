@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lead_management/utils/theme.dart';
 import 'package:lead_management/view/home/widget/cutom_textfrom.dart';
 
-class FacultyEidtProfile extends StatelessWidget {
-  const FacultyEidtProfile({super.key});
+class FacultyEditProfile extends StatelessWidget {
+  const FacultyEditProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,86 +24,84 @@ class FacultyEidtProfile extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(12.0.w), // Adjusted with screen_util
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
                   child: Text("Profile Image",
-                      style: theme.textTheme.labelMedium!)),
-              const SizedBox(
-                height: 8,
+                      style: theme.textTheme.labelMedium!.copyWith(
+                          fontSize: 16.sp))), // Adjusted with screen_util
+              SizedBox(
+                height: 8.h, // Adjusted with screen_util
               ),
-              const Center(
+              Center(
                 child: Stack(
                   children: [
                     CircleAvatar(
-                      radius: 50,
-                      backgroundColor: Color(0xFFFBF7FF),
+                      radius: 50.r, // Adjusted with screen_util
+                      backgroundColor: const Color(0xFFFBF7FF),
                       child: Icon(
                         CupertinoIcons.photo_on_rectangle,
-                        color: Color(0xFF7D23E0),
+                        color: const Color(0xFF7D23E0),
+                        size: 30.sp, // Adjusted with screen_util
                       ),
                     ),
                     Positioned(
                       bottom: 0,
-                      right: 12,
+                      right: 12.w, // Adjusted with screen_util
                       child: CircleAvatar(
-                        backgroundColor: Color(0xFF7D23E0),
-                        radius: 14,
-                        // Corrected background color
+                        backgroundColor: const Color(0xFF7D23E0),
+                        radius: 14.r, // Adjusted with screen_util
                         child: Icon(
                           Icons.add,
-                          color: Colors.white, // Icon color
-                          size: 14,
+                          color: Colors.white,
+                          size: 14.sp, // Adjusted with screen_util
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-              Text("Name of the Faculty*", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 16.h), // Adjusted with screen_util
+              Text("Name of the Faculty*",
+                  style: theme.textTheme.labelMedium!
+                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
+              SizedBox(height: 8.h), // Adjusted with screen_util
               CustomTextFormField(
                 hintText: 'Name',
                 onChanged: (value) {
                   print('Name: $value');
                 },
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10.h), // Adjusted with screen_util
               Text("Highest Qualification",
-                  style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+                  style: theme.textTheme.labelMedium!
+                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
+              SizedBox(height: 8.h), // Adjusted with screen_util
               CustomTextFormField(
-                hintText: 'Course Name ',
+                hintText: 'Course Name',
                 onChanged: (value) {
                   print('Name: $value');
                 },
                 suffixIcon: CupertinoButton(
                   padding: EdgeInsets.zero,
-                  child: const Icon(
+                  child: Icon(
                     CupertinoIcons.chevron_down,
                     color: Colors.black,
+                    size: 16.sp, // Adjusted with screen_util
                   ),
                   onPressed: () {
                     showBottomSheet(context);
                   },
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text("Select the Subject", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 10.h), // Adjusted with screen_util
+              Text("Select the Subject",
+                  style: theme.textTheme.labelMedium!
+                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
+              SizedBox(height: 8.h), // Adjusted with screen_util
               CustomTextFormField(
                 hintText: 'Subject',
                 onChanged: (value) {
@@ -110,90 +109,87 @@ class FacultyEidtProfile extends StatelessWidget {
                 },
                 suffixIcon: CupertinoButton(
                   padding: EdgeInsets.zero,
-                  child: const Icon(
+                  child: Icon(
                     CupertinoIcons.chevron_down,
                     color: Colors.black,
+                    size: 16.sp, // Adjusted with screen_util
                   ),
                   onPressed: () {
                     showBottomSheet(context);
                   },
                 ),
               ),
-              const SizedBox(
-                height: 8,
-              ),
-              Text("Email ID", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 8.h), // Adjusted with screen_util
+              Text("Email ID",
+                  style: theme.textTheme.labelMedium!
+                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
+              SizedBox(height: 8.h), // Adjusted with screen_util
               CustomTextFormField(
-                hintText: 'Enter Email ',
+                hintText: 'Enter Email',
                 onChanged: (value) {
                   print('Name: $value');
                 },
               ),
-              const SizedBox(
-                height: 8,
-              ),
-              Text("Mobile Number", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 8.h), // Adjusted with screen_util
+              Text("Mobile Number",
+                  style: theme.textTheme.labelMedium!
+                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
+              SizedBox(height: 8.h), // Adjusted with screen_util
               CustomTextFormField(
-                hintText: '+9100000000 ',
+                hintText: '+91 0000000000',
                 onChanged: (value) {
                   print('Name: $value');
                 },
               ),
-              Text("Description", style: theme.textTheme.labelMedium!),
-              const SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 8.h), // Adjusted with screen_util
+              Text("Description",
+                  style: theme.textTheme.labelMedium!
+                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
+              SizedBox(height: 8.h), // Adjusted with screen_util
               Container(
-                width: double.infinity, // Full width of the screen
-                height: 120, // Fixed height of 1200
+                width: double.infinity,
+                height: 120.h, // Adjusted with screen_util
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.white, // Background color of the container
-                  border: Border.all(
-                      color: const Color(0xFFEEEEEE)), // Border color
+                  borderRadius:
+                      BorderRadius.circular(12.r), // Adjusted with screen_util
+                  color: Colors.white,
+                  border: Border.all(color: const Color(0xFFEEEEEE)),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(8.0),
+                child: Padding(
+                  padding: EdgeInsets.all(8.0.w), // Adjusted with screen_util
                   child: Text(
                     'Start writing description here',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp, // Adjusted with screen_util
                       color: Colors.grey,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 60,
-              ),
+              SizedBox(height: 60.h), // Adjusted with screen_util
               Center(
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Handle 'No' button action
-                      Navigator.pop(context); // Close bottom sheet
-                      // Add logic for 'No' button action here
+                      Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16,
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16.h, // Adjusted with screen_util
                       ),
                       backgroundColor:
                           const Color(0xFF7D23E0), // Background color
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(
+                            8.r), // Adjusted with screen_util
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Save',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.sp), // Adjusted with screen_util
                     ),
                   ),
                 ),
@@ -216,26 +212,28 @@ class FacultyEidtProfile extends StatelessWidget {
       ),
       builder: (BuildContext context) {
         return Container(
-          height: 333, // Fixed height of the bottom sheet
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+          height: 333.h, // Adjusted with screen_util
+          padding: EdgeInsets.symmetric(
+              vertical: 16.h, horizontal: 24.w), // Adjusted with screen_util
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Select the Subject",
-                  style: theme.textTheme.labelMedium!.copyWith(fontSize: 18)),
-              const SizedBox(
-                height: 8,
+                  style: theme.textTheme.labelMedium!
+                      .copyWith(fontSize: 18.sp)), // Adjusted with screen_util
+              SizedBox(
+                height: 8.h, // Adjusted with screen_util
               ),
               _buildItem('Class 8th Physics'),
               const Divider(),
               _buildItem('Class 9th Physics'),
               const Divider(),
-              _buildItem('Class 8th Physics'),
+              _buildItem('Class 10th Physics'),
               const Divider(),
               _buildItem('IIT-JEE (Class 12th)'),
               const Divider(),
-              _buildItem('IIT-JEE (Class 12th)'),
+              _buildItem('NEET (Class 12th)'),
             ],
           ),
         );
@@ -245,8 +243,10 @@ class FacultyEidtProfile extends StatelessWidget {
 
   Widget _buildItem(String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text(text, style: theme.textTheme.labelMedium!),
+      padding: EdgeInsets.symmetric(vertical: 8.h), // Adjusted with screen_util
+      child: Text(text,
+          style: theme.textTheme.labelMedium!
+              .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
     );
   }
 }

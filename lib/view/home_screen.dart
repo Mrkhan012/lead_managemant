@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lead_management/utils/assets.dart';
 import 'package:lead_management/view/Account/account_screen.dart';
@@ -40,32 +41,32 @@ class _MyHomePageState extends State {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               AppImages.hp,
-              height: 20,
-              width: 20,
+              height: 20.h,
+              width: 20.w,
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               AppImages.clas,
-              height: 20,
-              width: 20,
+              height: 20.h,
+              width: 20.w,
             ),
             label: 'Class',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               AppImages.livee,
-              height: 20,
-              width: 20,
+              height: 20.h,
+              width: 20.w,
             ),
             label: 'Live',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               AppImages.leds,
-              height: 20,
-              width: 20,
+              height: 20.h,
+              width: 20.w,
             ),
             label: 'Leads',
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lead_management/utils/theme.dart';
 
 class HelpSupportScreen extends StatelessWidget {
@@ -21,35 +22,35 @@ class HelpSupportScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0.w), // Adjusted with screen_util
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Help & Support',
-                style: theme.textTheme.labelMedium!.copyWith(fontSize: 20)),
-            const SizedBox(
-              height: 8,
-            ),
+                style: theme.textTheme.labelMedium!
+                    .copyWith(fontSize: 20.sp)), // Adjusted with screen_util
+            SizedBox(height: 8.h), // Adjusted with screen_util
             Text(
-                'Add list of toppers from your coaching centre, if any\n This adds huge credibility for your institute.',
-                style: theme.textTheme.bodySmall!),
-            const SizedBox(
-              height: 12,
+              'Add list of toppers from your coaching centre, if any\n This adds huge credibility for your institute.',
+              style: theme.textTheme.bodySmall!,
             ),
+            SizedBox(height: 12.h), // Adjusted with screen_util
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Email ID',
-                    style: theme.textTheme.bodySmall!.copyWith(
-                        fontSize: 16, color: const Color(0xFF535353))),
+                Text(
+                  'Email ID',
+                  style: theme.textTheme.bodySmall!.copyWith(
+                    fontSize: 16.sp,
+                    color: const Color(0xFF535353),
+                  ),
+                ),
                 Row(
                   children: [
                     Text('Send Mail',
-                        style:
-                            theme.textTheme.bodySmall!.copyWith(fontSize: 12)),
-                    const SizedBox(
-                      width: 4,
-                    ),
+                        style: theme.textTheme.bodySmall!.copyWith(
+                            fontSize: 12.sp)), // Adjusted with screen_util
+                    SizedBox(width: 4.w), // Adjusted with screen_util
                     const Icon(
                       CupertinoIcons.mail,
                       size: 14,
@@ -58,24 +59,22 @@ class HelpSupportScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 8,
-            ),
+            SizedBox(height: 8.h), // Adjusted with screen_util
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('+91 9886256255',
                     style: theme.textTheme.bodySmall!.copyWith(
-                        fontSize: 16, color: const Color(0xFF535353))),
+                        fontSize: 16.sp,
+                        color: const Color(
+                            0xFF535353))), // Adjusted with screen_util
                 Row(
                   children: [
                     Text('Call',
                         style: theme.textTheme.bodySmall!.copyWith(
-                          fontSize: 12,
+                          fontSize: 12.sp, // Adjusted with screen_util
                         )),
-                    const SizedBox(
-                      width: 4,
-                    ),
+                    SizedBox(width: 4.w), // Adjusted with screen_util
                     const Icon(
                       CupertinoIcons.phone,
                       size: 14,
@@ -83,7 +82,7 @@ class HelpSupportScreen extends StatelessWidget {
                   ],
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
