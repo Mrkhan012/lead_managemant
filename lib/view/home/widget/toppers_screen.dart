@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
 import 'package:lead_management/view/home/widget/topper_profile_edit.dart';
 
@@ -26,40 +27,32 @@ class ToppersScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Institute Toppers',
+              AccountScreenText.kTopperTitle,
               style: theme.textTheme.labelMedium!
                   .copyWith(fontSize: 20, fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 8),
             Text(
-              'Add list of toppers from your coaching centre ifany\nThis adds huge credibility for your institute.',
+              AccountScreenText.kTopperSubtitle,
               style: theme.textTheme.bodySmall!,
             ),
             const SizedBox(height: 16),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.6,
-              child: ListView(
-                children: [
-                  _buildListItem(
-                    context,
-                    'Pathan Afroz',
-                    '70%cgpa',
-                    'assets/images/pro.jpg',
-                  ),
-                  _buildListItem(
-                    context,
-                    'Afrz Pathan ',
-                    '70%cgpa',
-                    'assets/images/pro.jpg',
-                  ),
-                  _buildListItem(
-                    context,
-                    'Shoel Pathan',
-                    '70%cgpa',
-                    'assets/images/pro.jpg',
-                  ),
-                ],
-              ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                final titles = [
+                  'Pathan Afroz',
+                  'Afrz Pathan',
+                  'Shoel Pathan',
+                ];
+                return _buildListItem(
+                  context,
+                  titles[index],
+                  '70% CGPA',
+                  'assets/images/pro.jpg',
+                );
+              },
             ),
             const Spacer(),
             Center(
@@ -103,77 +96,79 @@ class ToppersScreen extends StatelessWidget {
     String imagePath,
   ) {
     return Card(
-        elevation: 2,
-        color: Colors.white,
-        margin: const EdgeInsets.all(8),
-        child: ListTile(
-          leading: CircleAvatar(
-            radius: 30,
-            backgroundImage: AssetImage(imagePath),
-          ),
-          title: Row(
+      elevation: 2,
+      color: Colors.white,
+      margin: const EdgeInsets.all(8),
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: 30,
+          backgroundImage: AssetImage(imagePath),
+        ),
+        title: Row(
+          children: [
+            Text(title, style: theme.textTheme.labelMedium!),
+          ],
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: theme.textTheme.labelMedium!),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.badge,
+                    size: 16,
+                  ),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  Text("70% CGPA", style: theme.textTheme.labelMedium!),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.book_outlined,
+                    size: 16,
+                  ),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  _buildSubtitleContainer(
+                    'English',
+                    const Color(0xFFAFFFD0),
+                  ),
+                  const SizedBox(width: 4),
+                  _buildSubtitleContainer(
+                    'Math',
+                    const Color(0xFFFFD8D8),
+                  ),
+                  const SizedBox(width: 4),
+                  _buildSubtitleContainer(
+                    'Science',
+                    const Color(0xFFFFEFB4),
+                  ),
+                ],
+              ),
             ],
           ),
-          subtitle: Padding(
-            padding: const EdgeInsets.only(top: 4),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.badge,
-                      size: 16,
-                    ),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    Text("70% CPG", style: theme.textTheme.labelMedium!),
-                  ],
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.book_outlined,
-                      size: 16,
-                    ),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    _buildSubtitleContainer(
-                      'English',
-                      const Color(0xFFAFFFD0),
-                    ),
-                    const SizedBox(width: 4),
-                    _buildSubtitleContainer(
-                      'Math',
-                      const Color(0xFFFFD8D8),
-                    ),
-                    const SizedBox(width: 4),
-                    _buildSubtitleContainer(
-                      'Science',
-                      const Color(0xFFFFEFB4),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          trailing: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const TopperProfileEdit(),
-                  ),
-                );
-              },
-              child: SvgPicture.asset("assets/icon/edit-2.svg")),
-        ));
+        ),
+        trailing: InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const TopperProfileEdit(),
+              ),
+            );
+          },
+          child: SvgPicture.asset("assets/icon/edit-2.svg"),
+        ),
+      ),
+    );
   }
 
   Widget _buildSubtitleContainer(String label, Color color) {

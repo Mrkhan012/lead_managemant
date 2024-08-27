@@ -37,30 +37,22 @@ class TopFaculty extends StatelessWidget {
               style: theme.textTheme.bodySmall!,
             ),
             const SizedBox(height: 16),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.6,
-              child: ListView(
-                children: [
-                  _buildListItem(
-                    context,
-                    'Pathan Afroz',
-                    '70%cgpa',
-                    'assets/images/pro.jpg',
-                  ),
-                  _buildListItem(
-                    context,
-                    'Afrz Pathan ',
-                    '70%cgpa',
-                    'assets/images/pro.jpg',
-                  ),
-                  _buildListItem(
-                    context,
-                    'Shoel Pathan',
-                    '70%cgpa',
-                    'assets/images/pro.jpg',
-                  ),
-                ],
-              ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                final titles = [
+                  'Pathan Afroz',
+                  'Afrz Pathan',
+                  'Shoel Pathan',
+                ];
+                return _buildListItem(
+                  context,
+                  titles[index],
+                  '70% CGPA',
+                  'assets/images/pro.jpg',
+                );
+              },
             ),
             const Spacer(),
             Center(
@@ -70,7 +62,7 @@ class TopFaculty extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const FacultyEidtProfile(),
+                        builder: (context) => const TopperProfileEdit(),
                       ),
                     );
                   },
@@ -85,7 +77,7 @@ class TopFaculty extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    'Add New Faculty',
+                    'Add New Student',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -131,7 +123,7 @@ class TopFaculty extends StatelessWidget {
                   const SizedBox(
                     width: 4,
                   ),
-                  Text("70% CPG", style: theme.textTheme.labelMedium!),
+                  Text("70% CGPA", style: theme.textTheme.labelMedium!),
                 ],
               ),
               const SizedBox(
@@ -166,14 +158,15 @@ class TopFaculty extends StatelessWidget {
           ),
         ),
         trailing: InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const FacultyEidtProfile(),
-                ),
-              );
-            },
-            child: SvgPicture.asset("assets/icon/edit-2.svg")),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const TopperProfileEdit(),
+              ),
+            );
+          },
+          child: SvgPicture.asset("assets/icon/edit-2.svg"),
+        ),
       ),
     );
   }
