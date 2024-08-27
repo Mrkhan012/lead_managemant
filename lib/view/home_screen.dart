@@ -17,7 +17,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State {
   int _selectedIndex = 0;
   static const List _screens = [
-    HomeScreen(),
+    HomePage(),
     ClassScreen(),
     LiveScreen(),
     LeadsScreen(),

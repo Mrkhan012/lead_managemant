@@ -22,4 +22,5 @@ class AppImages {
   static const String livee = 'assets/icon/live.svg';
 
   static const String leds = 'assets/icon/chart.svg';
+  static const String edit = 'assets/icon/edit-2.svg';
 }

@@ -68,4 +68,8 @@ class AccountScreenText {
   static const String nowButton_2 = 'Ostelloindia';
 
   static const String nowButton_3 = 'Ostello';
+  static const String kAccountHeadline = 'Manage Account';
+  static const String kAccountTitle = 'Email Address';
+  static const String kAccountsubtitle = 'Add email address for communication';
+  static const String kAccountLogout = 'Logout';
 }

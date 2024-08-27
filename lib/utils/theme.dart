@@ -114,9 +114,9 @@ class TextThemes {
           fontWeight: FontWeight.w700,
         ),
         labelMedium: const TextStyle(
-          color: Color(0xFF1A1E25),
-          fontSize: 24,
-          fontFamily: 'Lexend',
+          color: Color(0xFF0C0C0C),
+          fontSize: 14,
+          fontFamily: 'Avenir LT Pro',
           fontWeight: FontWeight.w700,
         ),
         titleMedium: TextStyle(
@@ -143,10 +143,10 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         bodySmall: const TextStyle(
-          fontSize: 18,
-          fontFamily: ' Poppins',
+          fontSize: 14,
+          fontFamily: 'Avenir',
           fontWeight: FontWeight.w400,
-          color: Color(0xFF525251),
+          color: Color(0xFFA7A8A8),
         ),
         headlineLarge: const TextStyle(
           fontSize: 14,
