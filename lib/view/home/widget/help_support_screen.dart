@@ -22,19 +22,18 @@ class HelpSupportScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(8.0.w), // Adjusted with screen_util
+        padding: EdgeInsets.all(8.0.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Help & Support',
-                style: theme.textTheme.labelMedium!
-                    .copyWith(fontSize: 20.sp)), // Adjusted with screen_util
-            SizedBox(height: 8.h), // Adjusted with screen_util
+                style: theme.textTheme.bodyLarge!.copyWith(fontSize: 20.sp)),
+            SizedBox(height: 8.h),
             Text(
               'Add list of toppers from your coaching centre, if any\n This adds huge credibility for your institute.',
               style: theme.textTheme.bodySmall!,
             ),
-            SizedBox(height: 12.h), // Adjusted with screen_util
+            SizedBox(height: 12.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -53,13 +52,13 @@ class HelpSupportScreen extends StatelessWidget {
                     SizedBox(width: 4.w), // Adjusted with screen_util
                     const Icon(
                       CupertinoIcons.mail,
-                      size: 14,
+                      size: 16,
                     ),
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 8.h), // Adjusted with screen_util
+            SizedBox(height: 8.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -72,12 +71,12 @@ class HelpSupportScreen extends StatelessWidget {
                   children: [
                     Text('Call',
                         style: theme.textTheme.bodySmall!.copyWith(
-                          fontSize: 12.sp, // Adjusted with screen_util
+                          fontSize: 12.sp,
                         )),
-                    SizedBox(width: 4.w), // Adjusted with screen_util
+                    SizedBox(width: 4.w),
                     const Icon(
                       CupertinoIcons.phone,
-                      size: 14,
+                      size: 16,
                     ),
                   ],
                 ),

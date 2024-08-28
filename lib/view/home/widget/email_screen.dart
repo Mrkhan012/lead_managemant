@@ -22,7 +22,7 @@ class EmailScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(12.0.w), // Adjusted with screen_util
+        padding: EdgeInsets.all(12.0.sp), // Adjusted with screen_util
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -40,29 +40,32 @@ class EmailScreen extends StatelessWidget {
             ),
             const Spacer(),
             Center(
-              child: SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 16.h, // Adjusted with screen_util
-                      horizontal: 140.w, // Adjusted with screen_util
+              child: Padding(
+                padding: EdgeInsets.only(left: 12.w, right: 12.w),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16.h, // Adjusted with screen_util
+                        // Adjusted with screen_util
+                      ),
+                      backgroundColor:
+                          const Color(0xFF7D23E0), // Background color
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            8.r), // Adjusted with screen_util
+                      ),
                     ),
-                    backgroundColor:
-                        const Color(0xFF7D23E0), // Background color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          8.r), // Adjusted with screen_util
+                    child: Text(
+                      'Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.sp), // Adjusted with screen_util
                     ),
-                  ),
-                  child: Text(
-                    'Save',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.sp), // Adjusted with screen_util
                   ),
                 ),
               ),

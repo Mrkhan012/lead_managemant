@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lead_management/utils/theme.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? hintText;
@@ -24,6 +25,7 @@ class CustomTextFormField extends StatelessWidget {
       onChanged: onChanged,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: theme.textTheme.bodySmall!.copyWith(fontSize: 14.sp),
         prefixIcon: prefixIcon, // Prefix icon on the left side
         suffixIcon: suffixIcon, // Optional suffix icon on the right side
         filled: true,
@@ -34,7 +36,8 @@ class CustomTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.r),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white), // Active color
+          borderSide:
+              const BorderSide(color: Color(0xFFEEEEEE)), // Active color
           borderRadius: BorderRadius.circular(12.r),
         ),
         contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),

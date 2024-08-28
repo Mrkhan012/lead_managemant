@@ -28,11 +28,11 @@ class ManageAccount extends StatelessWidget {
           },
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.w), // Using screen utils for padding
-        child: Column(
-          children: [
-            Container(
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.w), // Using screen utils for padding
+            child: Container(
               padding: EdgeInsets.all(16.w),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -54,7 +54,7 @@ class ManageAccount extends StatelessWidget {
                           children: [
                             Text(
                               AccountScreenText.kAccountTitle,
-                              style: theme.textTheme.labelMedium!
+                              style: theme.textTheme.bodyLarge!
                                   .copyWith(fontSize: 14.sp),
                             ),
                             SizedBox(height: 4.h),
@@ -89,7 +89,7 @@ class ManageAccount extends StatelessWidget {
                         children: [
                           Text(
                             AccountScreenText.kAccountLogout,
-                            style: theme.textTheme.labelMedium!
+                            style: theme.textTheme.bodyLarge!
                                 .copyWith(fontSize: 14.sp),
                           )
                         ],
@@ -109,9 +109,9 @@ class ManageAccount extends StatelessWidget {
                   ),
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

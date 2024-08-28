@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lead_management/utils/assets.dart';
+import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
-import 'package:lead_management/view/home/widget/topper_profile_edit.dart';
+import 'package:lead_management/view/home/widget/faculty_edit_profile.dart';
 
 class TopFaculty extends StatelessWidget {
   const TopFaculty({super.key});
@@ -27,13 +29,13 @@ class TopFaculty extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Faculty',
+              AccountScreenText.facultyTitle,
               style: theme.textTheme.labelMedium!
                   .copyWith(fontSize: 20.sp, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 8.h),
             Text(
-              'Add list of toppers from your coaching centre if any.\nThis adds huge credibility for your institute.',
+              AccountScreenText.addToppersInfo,
               style: theme.textTheme.bodySmall!
                   .copyWith(fontSize: 14.sp), // Responsive font size
             ),
@@ -41,46 +43,48 @@ class TopFaculty extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 3,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 final titles = [
-                  'Pathan Afroz',
-                  'Afrz Pathan',
-                  'Shoel Pathan',
+                  AccountScreenText.pathanAfroz,
+                  AccountScreenText.afrzPathan,
                 ];
-                return _buildListItem(
+                return buildListItem(
                   context,
                   titles[index],
-                  '70% CGPA',
+                  AccountScreenText.highestCGPA,
                   'assets/images/pro.jpg',
                 );
               },
             ),
             const Spacer(),
-            Center(
-              child: SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const TopperProfileEdit(),
+            Padding(
+              padding: EdgeInsets.only(left: 12.w, right: 12.w),
+              child: Center(
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const FacultyEditProfile(),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16.h,
                       ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 16.h,
+                      backgroundColor: const Color(0xFF7D23E0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            12.r), // Responsive border radius
+                      ),
                     ),
-                    backgroundColor: const Color(0xFF7D23E0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          8.r), // Responsive border radius
+                    child: Text(
+                      AccountScreenText.addNewStudentButton,
+                      style: TextStyle(fontSize: 14.sp, color: Colors.white),
                     ),
-                  ),
-                  child: Text(
-                    'Add New Student',
-                    style: TextStyle(fontSize: 14.sp, color: Colors.white),
                   ),
                 ),
               ),
@@ -91,70 +95,68 @@ class TopFaculty extends StatelessWidget {
     );
   }
 
-  Widget _buildListItem(
+  Widget buildListItem(
     BuildContext context,
     String title,
     String subtitle,
     String imagePath,
   ) {
     return Card(
-      elevation: 2,
+      elevation: 1,
       color: Colors.white,
-      margin: EdgeInsets.all(8.w), // Responsive margin
+      margin: EdgeInsets.all(8.w), // Adjusted for ScreenUtil
       child: ListTile(
         leading: CircleAvatar(
-          radius: 30.r, // Responsive radius
+          radius: 30.r, // Adjusted for ScreenUtil
           backgroundImage: AssetImage(imagePath),
         ),
         title: Row(
           children: [
-            Text(
-              title,
-              style: theme.textTheme.labelMedium!
-                  .copyWith(fontSize: 16.sp), // Responsive font size
-            ),
+            Text(title,
+                style: theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
           ],
         ),
         subtitle: Padding(
-          padding: EdgeInsets.only(top: 4.h), // Responsive padding
+          padding: EdgeInsets.only(top: 4.h), // Adjusted for ScreenUtil
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  Icon(
-                    Icons.badge,
-                    size: 16.w, // Responsive icon size
+                  SvgPicture.asset(
+                    AppImages.award,
+                    height: 14.h,
+                    width: 14.w,
                   ),
-                  SizedBox(width: 4.w), // Responsive spacing
-                  Text(
-                    subtitle,
-                    style: theme.textTheme.labelMedium!
-                        .copyWith(fontSize: 14.sp), // Responsive font size
-                  ),
+
+                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                  Text(subtitle,
+                      style: theme.textTheme.labelMedium!
+                          .copyWith(fontSize: 12.sp)),
                 ],
               ),
-              SizedBox(height: 8.h), // Responsive spacing
+              SizedBox(height: 4.h), // Adjusted for ScreenUtil
               Row(
                 children: [
-                  Icon(
-                    Icons.book_outlined,
-                    size: 16.w, // Responsive icon size
+                  SvgPicture.asset(
+                    AppImages.book,
+                    height: 14.h,
+                    width: 14.w,
                   ),
-                  SizedBox(width: 4.w), // Responsive spacing
-                  _buildSubtitleContainer(
-                    'English',
-                    const Color(0xFFAFFFD0),
+                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                  buildSubtitleContainer(
+                    AccountScreenText.english,
+                    const Color(0xFFE8FFF2),
                   ),
-                  SizedBox(width: 4.w), // Responsive spacing
-                  _buildSubtitleContainer(
-                    'Math',
-                    const Color(0xFFFFD8D8),
+                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                  buildSubtitleContainer(
+                    AccountScreenText.math,
+                    const Color(0xFFFFEBEB),
                   ),
-                  SizedBox(width: 4.w), // Responsive spacing
-                  _buildSubtitleContainer(
-                    'Science',
-                    const Color(0xFFFFEFB4),
+                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                  buildSubtitleContainer(
+                    AccountScreenText.science,
+                    const Color(0xFFFFFBEC),
                   ),
                 ],
               ),
@@ -165,33 +167,37 @@ class TopFaculty extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const TopperProfileEdit(),
+                builder: (context) => const FacultyEditProfile(),
               ),
             );
           },
           child: SvgPicture.asset(
-            "assets/icon/edit-2.svg",
-            width: 24.w, // Responsive width
-            height: 24.h, // Responsive height
+            AppImages.edit,
+            height: 24.h,
+            width: 24.w,
           ),
         ),
       ),
     );
   }
 
-  Widget _buildSubtitleContainer(String label, Color color) {
+  Widget buildSubtitleContainer(String label, Color color) {
     return Container(
-      height: 24.h, // Responsive height
-      width: 48.w, // Responsive width
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(12.r), // Responsive border radius
+        borderRadius: BorderRadius.circular(12.r),
       ),
-      child: Center(
-        child: Text(
-          label,
-          style: TextStyle(
-              fontSize: 10.sp, color: Colors.black), // Responsive font size
+      child: Padding(
+        padding: EdgeInsets.all(2.0.sp),
+        child: Center(
+          child: Text(
+            label,
+            style: TextStyle(
+                fontSize: 10.sp,
+                color: const Color(0xFF525251),
+                fontFamily: "Avenir",
+                fontWeight: FontWeight.w500),
+          ),
         ),
       ),
     );

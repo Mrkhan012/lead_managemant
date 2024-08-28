@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lead_management/utils/theme.dart';
 
@@ -9,13 +10,13 @@ Widget buildbutton({
 }) {
   return Container(
     width: double.infinity,
-    margin: const EdgeInsets.symmetric(
-      horizontal: 16,
+    margin: EdgeInsets.symmetric(
+      horizontal: 16.w,
     ),
-    padding: const EdgeInsets.all(16),
+    padding: EdgeInsets.all(16.sp),
     decoration: BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(12.r),
       border: borderColor != null
           ? Border.all(color: borderColor)
           : null, // Conditional border
@@ -25,23 +26,22 @@ Widget buildbutton({
         Center(
           child: SvgPicture.asset(
             leadingSvgPath,
-            height: 30,
-            width: 30,
+            height: 28.h,
+            width: 28.w,
             fit: BoxFit
                 .contain, // Ensures the image scales properly within the bounds
           ),
         ),
-        const SizedBox(width: 16),
+        SizedBox(width: 12.w),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(title,
-                  style: theme.textTheme.bodyLarge!.copyWith(fontSize: 14)),
+                  style: theme.textTheme.bodyLarge!.copyWith(fontSize: 14.sp)),
             ],
           ),
         ),
-        const SizedBox(width: 20),
         ElevatedButton(
           onPressed: () {
             // Add your onPressed callback here
@@ -50,7 +50,7 @@ Widget buildbutton({
             foregroundColor: const Color(0xFF7D23E0),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
-                  8.0), // Adjust the border radius as needed
+                  4.0.r), // Adjust the border radius as needed
               side: const BorderSide(color: Color(0xFF7D23E0)), // Border color
             ),
             backgroundColor: Colors.white,
@@ -59,7 +59,8 @@ Widget buildbutton({
           ),
           child: Text('Follow us',
               style: theme.textTheme.bodyLarge!.copyWith(
-                  fontSize: 12,
+                  fontSize: 12.sp,
+                  fontFamily: "avenirr",
                   color: const Color(
                     0xFF7D23E0,
                   )) // Text color

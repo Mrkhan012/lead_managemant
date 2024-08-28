@@ -38,51 +38,54 @@ class _MyHomePageState extends State {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppImages.hp,
-              height: 20.h,
-              width: 20.w,
-            ),
+          _buildNavigationBarItem(
+            icon: AppImages.hp,
             label: 'Home',
+            index: 0,
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppImages.clas,
-              height: 20.h,
-              width: 20.w,
-            ),
+          _buildNavigationBarItem(
+            icon: AppImages.clas,
             label: 'Class',
+            index: 1,
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppImages.livee,
-              height: 20.h,
-              width: 20.w,
-            ),
+          _buildNavigationBarItem(
+            icon: AppImages.livee,
             label: 'Live',
+            index: 2,
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              AppImages.leds,
-              height: 20.h,
-              width: 20.w,
-            ),
+          _buildNavigationBarItem(
+            icon: AppImages.leds,
             label: 'Leads',
+            index: 3,
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             label: 'Account',
+            activeIcon: Icon(Icons.account_circle, color: Color(0xFF7D23E0)),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: const Color(
-          0xFF7D23E0,
-        ),
+        selectedItemColor: const Color(0xFF7D23E0),
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
         showUnselectedLabels: true,
       ),
+    );
+  }
+
+  BottomNavigationBarItem _buildNavigationBarItem({
+    required String icon,
+    required String label,
+    required int index,
+  }) {
+    return BottomNavigationBarItem(
+      icon: SvgPicture.asset(
+        icon,
+        height: 20.h,
+        width: 20.w,
+        color: _selectedIndex == index ? const Color(0xFF7D23E0) : Colors.grey,
+      ),
+      label: label,
     );
   }
 }

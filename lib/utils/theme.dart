@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Import your custom color and theme definitions
 
@@ -95,17 +96,17 @@ class ThemeHelper {
 /// Class containing the supported text theme styles.
 class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
-        bodyLarge: const TextStyle(
-          color: Color(0xFF0C0C0C),
-          fontSize: 28,
-          fontFamily: 'Avenir',
-          fontWeight: FontWeight.w600,
+        bodyLarge: TextStyle(
+          color: const Color(0xFF0C0C0C),
+          fontSize: 32.sp,
+          fontFamily: "avenirr",
+          fontWeight: FontWeight.w800,
         ),
         bodyMedium: TextStyle(
           color: appTheme.whiteA700,
           fontSize: 16,
-          fontFamily: 'Lexend',
-          fontWeight: FontWeight.w400,
+          fontFamily: 'Avenir',
+          fontWeight: FontWeight.w800,
         ),
         displayLarge: const TextStyle(
           color: Color(0xFFF14747),
@@ -115,9 +116,9 @@ class TextThemes {
         ),
         labelMedium: const TextStyle(
           color: Color(0xFF0C0C0C),
-          fontSize: 14,
-          fontFamily: 'Avenir LT Pro',
-          fontWeight: FontWeight.w700,
+          fontSize: 16,
+          fontFamily: 'avenir',
+          fontWeight: FontWeight.w500,
         ),
         titleMedium: TextStyle(
           color: appTheme.indigo900,
@@ -144,8 +145,8 @@ class TextThemes {
         ),
         bodySmall: const TextStyle(
           fontSize: 14,
-          fontFamily: 'Avenir',
-          fontWeight: FontWeight.w400,
+          fontFamily: 'avenir',
+          fontWeight: FontWeight.w500,
           color: Color(0xFFA7A8A8),
         ),
         headlineLarge: const TextStyle(

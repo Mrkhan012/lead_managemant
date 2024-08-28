@@ -1,6 +1,7 @@
 // text.dart
 
 class AccountScreenText {
+  // AccountScreen
   static const String accountTitle = "Account ";
   static const String accountNumber = "(#TGH0001)";
   static const String instituteName = 'Institute name';
@@ -20,8 +21,7 @@ class AccountScreenText {
   static const String facultyTitle = 'Faculty';
   static const String facultySubtitle = 'Add faculty in your institute';
   static const String referEarnTitle = 'Refer & Earn';
-  static const String referEarnSubtitle =
-      'Name, E-Mail, phone number & address';
+  static const String referEarnSubtitle = 'Name, E-Mail,phone number address';
   static const String rateUsTitle = 'Rate Us';
   static const String rateUsSubtitle = 'How did you like using the app';
   static const String aboutOstelloAITitle = 'About Ostello AI';
@@ -46,18 +46,51 @@ class AccountScreenText {
   static const String step3 =
       '3. ₹250 worth 250 coins will be immediately added to your Ostello wallet for each successful referral!';
   static const String termsAndConditions = '*Terms and conditions apply.*';
-
   static const String referNowButton = 'Refer Now';
   static const String nowButton = 'Ostelloindia';
-
   static const String nowButton_2 = 'Ostelloindia';
-
   static const String nowButton_3 = 'Ostello';
   static const String kAccountHeadline = 'Manage Account';
   static const String kAccountTitle = 'Email Address';
   static const String kAccountsubtitle = 'Add email address for communication';
   static const String kAccountLogout = 'Logout';
+
+  // topper screen
   static const String kTopperTitle = 'Institute Toppers';
   static const String kTopperSubtitle =
-      'Add list of toppers from your coaching centre ifany\nThis adds huge credibility for your institute.';
+      'Add list of toppers from your coaching centre if This adds huge credibility for your institute.';
+  static const String profileImage = "Profile Image";
+  static const String nameOfFaculty = "Name of the Faculty*";
+  static const String highestQualification = "Highest Qualification";
+  static const String selectTheSubject = "Select the Subject";
+  static const String emailId = "Email ID";
+  static const String mobileNumber = "Mobile Number";
+  static const String description = "Description";
+  static const String startWritingDescription =
+      "Start writing description here";
+  static const String delete = "Delete";
+  static const String save = "Save";
+  static const String selectSubject = "Select the Subject";
+  static const List subjectItems = [
+    'Class 8th Physics',
+    'Class 9th Physics',
+    'Class 10th Physics',
+    'IIT-JEE (Class 12th)',
+    'NEET (Class 12th)',
+  ];
+  //  faculty Screen
+  static const String addToppersInfo =
+      'Add list of toppers from your coaching centre if any. This adds huge credibility for your institute.';
+  static const String addNewStudentButton = 'Add New Student';
+  static const String pathanAfroz = 'Pathan Afroz';
+  static const String afrzPathan = 'Afrz Pathan';
+  static const String highestCGPA = '70% CGPA';
+  static const String english = 'English';
+  static const String math = 'Math';
+  static const String science = 'Science';
+
+  // TopperProfileEdit screen
+  static const String nameOfStudent = "Name of the Student*";
+  static const String schoolName = "School Name";
+  static const String percentageMarks = "Percentage/Marks Student got.";
 }

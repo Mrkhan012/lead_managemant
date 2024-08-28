@@ -3,7 +3,6 @@ class AppImages {
   static const String wallet = 'assets/icon/wallet-3.svg';
   static const String service = 'assets/icon/service.svg';
   static const String file = 'assets/icon/file.svg';
-
   static const String family = 'assets/icon/family.svg';
   static const String topper = 'assets/icon/topper.svg';
   static const String person = 'assets/icon/person.svg';
@@ -18,9 +17,9 @@ class AppImages {
   static const String copy = 'assets/icon/copy.svg';
   static const String hp = 'assets/icon/home.svg';
   static const String clas = 'assets/icon/teacher.svg';
-
   static const String livee = 'assets/icon/live.svg';
-
   static const String leds = 'assets/icon/chart.svg';
   static const String edit = 'assets/icon/edit-2.svg';
+  static const String book = 'assets/icon/book.svg';
+  static const String award = 'assets/icon/award.svg';
 }

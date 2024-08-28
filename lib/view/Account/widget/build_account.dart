@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lead_management/main.dart';
 import 'package:lead_management/utils/theme.dart';
 
 Widget buildAccountCard({
@@ -8,13 +10,12 @@ Widget buildAccountCard({
   required String imagePath,
 }) {
   return Container(
-    height: 90,
     width: double.infinity,
-    margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
-    padding: const EdgeInsets.all(16),
+    margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
+    padding: EdgeInsets.all(16.sp),
     decoration: BoxDecoration(
-      color: Colors.grey[100],
-      borderRadius: BorderRadius.circular(20),
+      color: const Color(0xFFFBFBFB),
+      borderRadius: BorderRadius.circular(12.r),
     ),
     child: Row(
       children: [
@@ -25,17 +26,17 @@ Widget buildAccountCard({
               backgroundImage: AssetImage(imagePath),
             ),
             Positioned(
-              bottom: 0,
+              bottom: -5.h,
               right: 0,
               child: Image.asset(
                 "assets/images/blue_tick.png",
-                height: 20,
-                width: 20,
+                height: 24.h,
+                width: 24.w,
               ),
             ),
           ],
         ),
-        const SizedBox(width: 16),
+        SizedBox(width: 12.w),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,11 +44,11 @@ Widget buildAccountCard({
               Text(
                 title,
                 style: theme.textTheme.bodyLarge!
-                    .copyWith(fontSize: 16), // Adjust text style as needed
+                    .copyWith(fontSize: 16.sp), // Adjust text style as needed
               ),
               Text(subtitle,
                   style: theme.textTheme.bodySmall!
-                      .copyWith(fontSize: 14) // Adjust text style as needed
+                      .copyWith(fontSize: 12.sp) // Adjust text style as needed
                   ),
             ],
           ),

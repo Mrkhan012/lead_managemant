@@ -1,6 +1,9 @@
+// faculty_edit_profile.dart
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
 import 'package:lead_management/view/home/widget/cutom_textfrom.dart';
 
@@ -22,180 +25,222 @@ class FacultyEditProfile extends StatelessWidget {
           },
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(12.0.w), // Adjusted with screen_util
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                  child: Text("Profile Image",
-                      style: theme.textTheme.labelMedium!.copyWith(
-                          fontSize: 16.sp))), // Adjusted with screen_util
-              SizedBox(
-                height: 8.h, // Adjusted with screen_util
-              ),
-              Center(
-                child: Stack(
+      body: Padding(
+        padding: EdgeInsets.all(12.0.w), // Adjusted with screen_util
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      radius: 50.r, // Adjusted with screen_util
-                      backgroundColor: const Color(0xFFFBF7FF),
-                      child: Icon(
-                        CupertinoIcons.photo_on_rectangle,
-                        color: const Color(0xFF7D23E0),
-                        size: 30.sp, // Adjusted with screen_util
+                    Center(
+                      child: Text(AccountScreenText.profileImage,
+                          style: theme.textTheme.bodyLarge!
+                              .copyWith(fontSize: 16.sp)),
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Center(
+                      child: Stack(
+                        children: [
+                          CircleAvatar(
+                            radius: 50.r,
+                            backgroundColor: const Color(0xFFFBF7FF),
+                            child: Icon(
+                              CupertinoIcons.photo_on_rectangle,
+                              color: const Color(0xFF7D23E0),
+                              size: 30.sp,
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 6.w,
+                            child: CircleAvatar(
+                              backgroundColor: const Color(0xFF7D23E0),
+                              radius: 14.r,
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 14.sp,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 12.w, // Adjusted with screen_util
-                      child: CircleAvatar(
-                        backgroundColor: const Color(0xFF7D23E0),
-                        radius: 14.r, // Adjusted with screen_util
+                    SizedBox(height: 16.h),
+                    Text(AccountScreenText.nameOfFaculty,
+                        style: theme.textTheme.labelMedium!
+                            .copyWith(fontSize: 16.sp)),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: 'Name',
+                      onChanged: (value) {
+                        print('Name: $value');
+                      },
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(AccountScreenText.highestQualification,
+                        style: theme.textTheme.labelMedium!
+                            .copyWith(fontSize: 16.sp)),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: 'Course Name',
+                      onChanged: (value) {
+                        print('Name: $value');
+                      },
+                      suffixIcon: CupertinoButton(
+                        padding: EdgeInsets.zero,
                         child: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                          size: 14.sp, // Adjusted with screen_util
+                          CupertinoIcons.chevron_down,
+                          color: Colors.black,
+                          size: 16.sp,
+                        ),
+                        onPressed: () {
+                          showBottomSheet(context);
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(AccountScreenText.selectTheSubject,
+                        style: theme.textTheme.labelMedium!
+                            .copyWith(fontSize: 16.sp)),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: 'Subject',
+                      onChanged: (value) {
+                        print('Name: $value');
+                      },
+                      suffixIcon: CupertinoButton(
+                        padding: EdgeInsets.zero,
+                        child: Icon(
+                          CupertinoIcons.chevron_down,
+                          color: Colors.black,
+                          size: 16.sp,
+                        ),
+                        onPressed: () {
+                          showBottomSheet(context);
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(AccountScreenText.emailId,
+                        style: theme.textTheme.labelMedium!
+                            .copyWith(fontSize: 16.sp)),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: 'Enter Email',
+                      onChanged: (value) {
+                        print('Name: $value');
+                      },
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(AccountScreenText.mobileNumber,
+                        style: theme.textTheme.labelMedium!
+                            .copyWith(fontSize: 16.sp)),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: '+91 0000000000',
+                      onChanged: (value) {
+                        print('Name: $value');
+                      },
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(AccountScreenText.description,
+                        style: theme.textTheme.labelMedium!
+                            .copyWith(fontSize: 16.sp)),
+                    SizedBox(height: 12.h),
+                    Container(
+                      width: double.infinity,
+                      height: 120.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12.r),
+                        color: Colors.white,
+                        border: Border.all(color: const Color(0xFFEEEEEE)),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0.w),
+                        child: Text(
+                          AccountScreenText.startWritingDescription,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 12.h,
+                    )
                   ],
                 ),
               ),
-              SizedBox(height: 16.h), // Adjusted with screen_util
-              Text("Name of the Faculty*",
-                  style: theme.textTheme.labelMedium!
-                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              CustomTextFormField(
-                hintText: 'Name',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-              ),
-              SizedBox(height: 10.h), // Adjusted with screen_util
-              Text("Highest Qualification",
-                  style: theme.textTheme.labelMedium!
-                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              CustomTextFormField(
-                hintText: 'Course Name',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-                suffixIcon: CupertinoButton(
-                  padding: EdgeInsets.zero,
-                  child: Icon(
-                    CupertinoIcons.chevron_down,
-                    color: Colors.black,
-                    size: 16.sp, // Adjusted with screen_util
-                  ),
-                  onPressed: () {
-                    showBottomSheet(context);
-                  },
-                ),
-              ),
-              SizedBox(height: 10.h), // Adjusted with screen_util
-              Text("Select the Subject",
-                  style: theme.textTheme.labelMedium!
-                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              CustomTextFormField(
-                hintText: 'Subject',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-                suffixIcon: CupertinoButton(
-                  padding: EdgeInsets.zero,
-                  child: Icon(
-                    CupertinoIcons.chevron_down,
-                    color: Colors.black,
-                    size: 16.sp, // Adjusted with screen_util
-                  ),
-                  onPressed: () {
-                    showBottomSheet(context);
-                  },
-                ),
-              ),
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              Text("Email ID",
-                  style: theme.textTheme.labelMedium!
-                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              CustomTextFormField(
-                hintText: 'Enter Email',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-              ),
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              Text("Mobile Number",
-                  style: theme.textTheme.labelMedium!
-                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              CustomTextFormField(
-                hintText: '+91 0000000000',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-              ),
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              Text("Description",
-                  style: theme.textTheme.labelMedium!
-                      .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
-              SizedBox(height: 8.h), // Adjusted with screen_util
-              Container(
-                width: double.infinity,
-                height: 120.h, // Adjusted with screen_util
-                decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.circular(12.r), // Adjusted with screen_util
-                  color: Colors.white,
-                  border: Border.all(color: const Color(0xFFEEEEEE)),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(8.0.w), // Adjusted with screen_util
-                  child: Text(
-                    'Start writing description here',
-                    style: TextStyle(
-                      fontSize: 16.sp, // Adjusted with screen_util
-                      color: Colors.grey,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  height: 48.h,
+                  width: 140.w,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context); // Close the screen on save
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                        side: const BorderSide(color: Colors.red),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.delete, color: Colors.red),
+                        SizedBox(width: 8.w),
+                        Text(
+                          AccountScreenText.delete,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.red,
+                            fontFamily: "avenir",
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 60.h), // Adjusted with screen_util
-              Center(
-                child: SizedBox(
-                  width: double.infinity,
+                SizedBox(
+                  height: 48.h,
+                  width: 140.w,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pop(context); // Close the screen on save
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 16.h, // Adjusted with screen_util
-                      ),
-                      backgroundColor:
-                          const Color(0xFF7D23E0), // Background color
+                      backgroundColor: const Color(0xFF7D23E0),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            8.r), // Adjusted with screen_util
+                        borderRadius: BorderRadius.circular(8.r),
                       ),
                     ),
                     child: Text(
-                      'Save',
+                      AccountScreenText.save,
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.sp), // Adjusted with screen_util
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                        fontFamily: "avenir",
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -212,28 +257,25 @@ class FacultyEditProfile extends StatelessWidget {
       ),
       builder: (BuildContext context) {
         return Container(
-          height: 333.h, // Adjusted with screen_util
-          padding: EdgeInsets.symmetric(
-              vertical: 16.h, horizontal: 24.w), // Adjusted with screen_util
+          height: 333.h,
+          padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Select the Subject",
-                  style: theme.textTheme.labelMedium!
-                      .copyWith(fontSize: 18.sp)), // Adjusted with screen_util
+              Text(AccountScreenText.selectSubject,
+                  style:
+                      theme.textTheme.labelMedium!.copyWith(fontSize: 18.sp)),
               SizedBox(
-                height: 8.h, // Adjusted with screen_util
+                height: 8.h,
               ),
-              _buildItem('Class 8th Physics'),
-              const Divider(),
-              _buildItem('Class 9th Physics'),
-              const Divider(),
-              _buildItem('Class 10th Physics'),
-              const Divider(),
-              _buildItem('IIT-JEE (Class 12th)'),
-              const Divider(),
-              _buildItem('NEET (Class 12th)'),
+              for (String item in AccountScreenText.subjectItems)
+                Column(
+                  children: [
+                    _buildItem(item),
+                    const Divider(),
+                  ],
+                ),
             ],
           ),
         );
@@ -243,10 +285,11 @@ class FacultyEditProfile extends StatelessWidget {
 
   Widget _buildItem(String text) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.h), // Adjusted with screen_util
-      child: Text(text,
-          style: theme.textTheme.labelMedium!
-              .copyWith(fontSize: 16.sp)), // Adjusted with screen_util
+      padding: EdgeInsets.symmetric(vertical: 8.h),
+      child: Text(
+        text,
+        style: theme.textTheme.labelMedium!.copyWith(fontSize: 16.sp),
+      ),
     );
   }
 }

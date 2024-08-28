@@ -28,61 +28,71 @@ class ToppersScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              AccountScreenText.kTopperTitle,
-              style: theme.textTheme.labelMedium!.copyWith(
-                fontSize: 20.sp, // Responsive font size
-                fontWeight: FontWeight.w700,
+            Padding(
+              padding: EdgeInsets.only(left: 8.0.w),
+              child: Text(
+                AccountScreenText.kTopperTitle,
+                style: theme.textTheme.labelMedium!.copyWith(
+                  fontSize: 20.sp, // Responsive font size
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
             SizedBox(height: 8.h),
-            Text(
-              AccountScreenText.kTopperSubtitle,
-              style: theme.textTheme.bodySmall!.copyWith(fontSize: 14.sp),
+            Padding(
+              padding: EdgeInsets.only(left: 8.0.w),
+              child: Text(
+                AccountScreenText.kTopperSubtitle,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  fontSize: 14.sp,
+                ),
+              ),
             ),
             SizedBox(height: 16.h),
             ListView.builder(
               shrinkWrap: true,
-              itemCount: 3,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 final titles = [
                   'Pathan Afroz',
-                  'Afrz Pathan',
-                  'Shoel Pathan',
+                  'Afroz Pathan',
                 ];
                 return buildListItem(
                   context,
                   titles[index],
-                  '70% CGPA',
+                  '70% CPG',
                   'assets/images/pro.jpg',
                 );
               },
             ),
             const Spacer(),
             Center(
-              child: SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const TopperProfileEdit(),
+              child: Padding(
+                padding: EdgeInsets.only(left: 12.w, right: 12.w),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const TopperProfileEdit(),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16.h,
                       ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 16.h,
+                      backgroundColor:
+                          const Color(0xFF7D23E0), // Background color
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
                     ),
-                    backgroundColor:
-                        const Color(0xFF7D23E0), // Background color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.r),
+                    child: Text(
+                      'Add New Student',
+                      style: theme.textTheme.bodyMedium,
                     ),
-                  ),
-                  child: const Text(
-                    'Add New Student',
-                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),

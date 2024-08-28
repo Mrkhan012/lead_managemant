@@ -35,22 +35,24 @@ class HomePage extends StatelessWidget {
                     // Account information
                     Text(
                       AccountScreenText.accountTitle,
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                        fontSize: 20.sp, // Responsive font size
+                      style: theme.textTheme.bodyLarge!.copyWith(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: Text(
+                        AccountScreenText.accountNumber,
+                        style: theme.textTheme.bodySmall!.copyWith(
+                          fontSize: 18.sp, // Responsive font size
+                        ),
                       ),
                     ),
-                    SizedBox(width: 4.w), // Responsive spacing
-                    Text(
-                      AccountScreenText.accountNumber,
-                      style: theme.textTheme.bodySmall!.copyWith(
-                        fontSize: 14.sp, // Responsive font size
+                    Padding(
+                      padding: EdgeInsets.only(top: 12.h, left: 4.w),
+                      child: SvgPicture.asset(
+                        AppImages.copy,
+                        height: 20.h, // Responsive height
+                        width: 20.w, // Responsive width
                       ),
-                    ),
-                    SizedBox(width: 4.w), // Responsive spacing
-                    SvgPicture.asset(
-                      AppImages.copy,
-                      height: 20.h, // Responsive height
-                      width: 20.w, // Responsive width
                     ),
                   ],
                 ),
@@ -232,7 +234,7 @@ class HomePage extends StatelessWidget {
                       child: Text(
                         AccountScreenText.followUsSocialMedia,
                         style: theme.textTheme.bodyLarge!.copyWith(
-                          fontSize: 16.sp, // Responsive font size
+                          fontSize: 16.sp,
                         ),
                       ),
                     ),

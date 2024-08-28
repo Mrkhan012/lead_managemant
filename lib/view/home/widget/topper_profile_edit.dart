@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
 import 'package:lead_management/view/home/widget/cutom_textfrom.dart';
 
@@ -22,125 +23,176 @@ class TopperProfileEdit extends StatelessWidget {
           },
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(12.w),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Text(
-                  "Profile Image",
-                  style: theme.textTheme.labelMedium!.copyWith(fontSize: 16.sp),
-                ),
-              ),
-              SizedBox(height: 8.h),
-              const Center(
-                child: Stack(
+      body: Padding(
+        padding: EdgeInsets.all(12.w),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundColor: Color(0xFFFBF7FF),
-                      child: Icon(
-                        CupertinoIcons.photo_on_rectangle,
-                        color: Color(0xFF7D23E0),
+                    Center(
+                      child: Text(
+                        AccountScreenText.profileImage,
+                        style: theme.textTheme.bodyLarge!
+                            .copyWith(fontSize: 16.sp),
                       ),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 12,
-                      child: CircleAvatar(
-                        backgroundColor: Color(0xFF7D23E0),
-                        radius: 14,
-                        child: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                          size: 14,
+
+                    SizedBox(height: 8.h),
+                    Center(
+                      child: Stack(
+                        children: [
+                          CircleAvatar(
+                            radius: 50.r, // Adjusted with screen_util
+                            backgroundColor: const Color(0xFFFBF7FF),
+                            child: Icon(
+                              CupertinoIcons.photo_on_rectangle,
+                              color: const Color(0xFF7D23E0),
+                              size: 30.sp, // Adjusted with screen_util
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 6.w, // Adjusted with screen_util
+                            child: CircleAvatar(
+                              backgroundColor: const Color(0xFF7D23E0),
+                              radius: 14.r, // Adjusted with screen_util
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 14.sp, // Adjusted with screen_util
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      AccountScreenText.nameOfFaculty,
+                      style: theme.textTheme.labelMedium!
+                          .copyWith(fontSize: 16.sp),
+                    ),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: AccountScreenText.nameOfFaculty,
+                      onChanged: (value) {},
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      AccountScreenText.schoolName,
+                      style: theme.textTheme.labelMedium!
+                          .copyWith(fontSize: 16.sp),
+                    ),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: AccountScreenText.schoolName,
+                      onChanged: (value) {},
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      AccountScreenText.percentageMarks,
+                      style: theme.textTheme.labelMedium!
+                          .copyWith(fontSize: 16.sp),
+                    ),
+                    SizedBox(height: 12.h),
+                    CustomTextFormField(
+                      hintText: AccountScreenText.percentageMarks,
+                      onChanged: (value) {},
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      AccountScreenText.selectSubject,
+                      style: theme.textTheme.labelMedium!
+                          .copyWith(fontSize: 16.sp),
+                    ),
+                    SizedBox(height: 12.h), // Adjusted with screen_util
+                    CustomTextFormField(
+                      hintText: AccountScreenText.selectSubject,
+                      onChanged: (value) {},
+                      suffixIcon: CupertinoButton(
+                        padding: EdgeInsets.zero,
+                        child: const Icon(
+                          CupertinoIcons.chevron_down,
+                          color: Colors.black,
                         ),
+                        onPressed: () {
+                          showBottomSheet(context);
+                        },
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 8.h),
-              Text("Name of the Student*",
-                  style:
-                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
-              SizedBox(height: 8.h),
-              CustomTextFormField(
-                hintText: 'Name',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-              ),
-              SizedBox(height: 10.h),
-              Text("School Name",
-                  style:
-                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
-              SizedBox(height: 8.h),
-              CustomTextFormField(
-                hintText: 'School Name',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-              ),
-              SizedBox(height: 10.h),
-              Text("Percentage/Marks Student got.",
-                  style:
-                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
-              SizedBox(height: 8.h),
-              CustomTextFormField(
-                hintText: 'Percentage',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-              ),
-              SizedBox(height: 10.h),
-              Text("Select the Subject",
-                  style:
-                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
-              SizedBox(height: 8.h),
-              CustomTextFormField(
-                hintText: 'Subject',
-                onChanged: (value) {
-                  print('Name: $value');
-                },
-                suffixIcon: CupertinoButton(
-                  padding: EdgeInsets.zero,
-                  child: const Icon(
-                    CupertinoIcons.chevron_down,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {
-                    showBottomSheet(context);
-                  },
-                ),
-              ),
-              SizedBox(height: 60.h),
-              Center(
-                child: SizedBox(
-                  width: double.infinity,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  height: 48.h,
+                  width: 140.w,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pop(context); // Close the screen on save
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 16.h),
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                        side:
+                            const BorderSide(color: Colors.red), // Border color
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.delete,
+                            color: Colors.red), // Icon on the left side
+                        SizedBox(width: 8.w), // Spacing between icon and text
+                        Text(
+                          AccountScreenText.delete,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.red,
+                            fontFamily: "avenir",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 48.h,
+                  width: 140.w,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context); // Close the screen on save
+                    },
+                    style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF7D23E0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.r),
                       ),
                     ),
                     child: Text(
-                      'Save',
-                      style: TextStyle(fontSize: 14.sp, color: Colors.white),
+                      AccountScreenText.save,
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                        fontFamily: "avenir",
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -163,19 +215,20 @@ class TopperProfileEdit extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Select the Subject",
-                  style:
-                      theme.textTheme.labelMedium!.copyWith(fontSize: 18.sp)),
+              Text(
+                AccountScreenText.selectSubject,
+                style: theme.textTheme.labelMedium!.copyWith(fontSize: 18.sp),
+              ),
               SizedBox(height: 8.h),
-              _buildItem('Class 8th Physics'),
+              _buildItem(AccountScreenText.subjectItems[0]),
               const Divider(),
-              _buildItem('Class 9th Physics'),
+              _buildItem(AccountScreenText.subjectItems[1]),
               const Divider(),
-              _buildItem('Class 8th Physics'),
+              _buildItem(AccountScreenText.subjectItems[2]),
               const Divider(),
-              _buildItem('IIT-JEE (Class 12th)'),
+              _buildItem(AccountScreenText.subjectItems[3]),
               const Divider(),
-              _buildItem('IIT-JEE (Class 12th)'),
+              _buildItem(AccountScreenText.subjectItems[4]),
             ],
           ),
         );
