@@ -57,7 +57,7 @@ class AccountScreen extends StatelessWidget {
                 subtitle: AccountScreenText.walletSubtitle,
                 trailingIcon: CupertinoIcons.forward,
                 borderColor: const Color(0xFFDDBEFF),
-                leadingSvgPath: AppImages.wallet,
+                leadingSvgPath: AppImages.file,
               ),
               const SizedBox(
                 height: 20,
@@ -75,7 +75,7 @@ class AccountScreen extends StatelessWidget {
               buildOption(
                 title: AccountScreenText.categoryServicesTitle,
                 subtitle: AccountScreenText.categoryServicesSubtitle,
-                leadingSvgPath: AppImages.service,
+                leadingSvgPath: AppImages.file,
                 trailingIcon: CupertinoIcons.forward,
               ),
               const SizedBox(
@@ -86,7 +86,7 @@ class AccountScreen extends StatelessWidget {
               buildOption(
                 title: AccountScreenText.enrolledStudentsTitle,
                 subtitle: AccountScreenText.enrolledStudentsSubtitle,
-                leadingSvgPath: AppImages.family,
+                leadingSvgPath: AppImages.file,
                 trailingIcon: CupertinoIcons.forward,
               ),
               // section for topper students  card
@@ -102,7 +102,7 @@ class AccountScreen extends StatelessWidget {
               buildOption(
                 title: AccountScreenText.facultyTitle,
                 subtitle: AccountScreenText.facultySubtitle,
-                leadingSvgPath: AppImages.person,
+                leadingSvgPath: AppImages.file,
                 trailingIcon: CupertinoIcons.forward,
               ),
               const SizedBox(
@@ -120,7 +120,7 @@ class AccountScreen extends StatelessWidget {
                 child: buildOption(
                   title: AccountScreenText.referEarnTitle,
                   subtitle: AccountScreenText.referEarnSubtitle,
-                  leadingSvgPath: AppImages.share,
+                  leadingSvgPath: AppImages.file,
                   trailingIcon: CupertinoIcons.forward,
                 ),
               ),
@@ -139,7 +139,7 @@ class AccountScreen extends StatelessWidget {
               buildOption(
                 title: AccountScreenText.rateUsTitle,
                 subtitle: AccountScreenText.rateUsSubtitle,
-                leadingSvgPath: AppImages.star,
+                leadingSvgPath: AppImages.file,
                 trailingIcon: CupertinoIcons.forward,
               ),
               const Padding(
@@ -157,7 +157,7 @@ class AccountScreen extends StatelessWidget {
               buildOption(
                 title: AccountScreenText.aboutOstelloAITitle,
                 subtitle: AccountScreenText.aboutOstelloAISubtitle,
-                leadingSvgPath: AppImages.i,
+                leadingSvgPath: AppImages.file,
                 trailingIcon: CupertinoIcons.forward,
               ),
               const Padding(
@@ -175,7 +175,7 @@ class AccountScreen extends StatelessWidget {
               buildOption(
                 title: AccountScreenText.helpSupportTitle,
                 subtitle: AccountScreenText.helpSupportSubtitle,
-                leadingSvgPath: AppImages.support,
+                leadingSvgPath: AppImages.file,
                 trailingIcon: CupertinoIcons.forward,
               ),
               const Padding(
@@ -193,7 +193,7 @@ class AccountScreen extends StatelessWidget {
               buildOption(
                 title: AccountScreenText.manageAccountTitle,
                 subtitle: AccountScreenText.manageAccountSubtitle,
-                leadingSvgPath: AppImages.settings,
+                leadingSvgPath: AppImages.file,
                 trailingIcon: CupertinoIcons.forward,
               ),
               const Divider(

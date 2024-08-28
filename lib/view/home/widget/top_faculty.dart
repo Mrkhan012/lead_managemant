@@ -13,7 +13,7 @@ class TopFaculty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFBFBFB),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
@@ -22,45 +22,58 @@ class TopFaculty extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
+        bottom: PreferredSize(
+          preferredSize:
+              const Size.fromHeight(1.0), // Set height of the divider
+          child: Container(
+            color: const Color(0xFFEEEEEE), // Divider color
+            height: 1.0, // Divider height
+          ),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(8.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              AccountScreenText.facultyTitle,
-              style: theme.textTheme.labelMedium!
-                  .copyWith(fontSize: 20.sp, fontWeight: FontWeight.w700),
+            Padding(
+              padding: EdgeInsets.only(left: 16.w),
+              child: Text(
+                AccountScreenText.facultyTitle,
+                style: theme.textTheme.labelMedium!
+                    .copyWith(fontSize: 20.sp, fontWeight: FontWeight.w700),
+              ),
             ),
             SizedBox(height: 8.h),
-            Text(
-              AccountScreenText.addToppersInfo,
-              style: theme.textTheme.bodySmall!
-                  .copyWith(fontSize: 14.sp), // Responsive font size
+            Padding(
+              padding: EdgeInsets.only(left: 16.w),
+              child: Text(
+                AccountScreenText.addToppersInfo,
+                style: theme.textTheme.bodySmall!
+                    .copyWith(fontSize: 14.sp), // Responsive font size
+              ),
             ),
-            SizedBox(height: 16.h), // Responsive height
+            SizedBox(height: 10.h),
             ListView.builder(
               shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
               itemCount: 2,
               itemBuilder: (context, index) {
                 final titles = [
-                  AccountScreenText.pathanAfroz,
-                  AccountScreenText.afrzPathan,
+                  'Pathan Afroz',
+                  'Afroz Pathan',
                 ];
                 return buildListItem(
                   context,
                   titles[index],
-                  AccountScreenText.highestCGPA,
+                  '70% CPG',
                   'assets/images/pro.jpg',
                 );
               },
             ),
             const Spacer(),
-            Padding(
-              padding: EdgeInsets.only(left: 12.w, right: 12.w),
-              child: Center(
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(left: 12.w, right: 12.w),
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -75,15 +88,15 @@ class TopFaculty extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                         vertical: 16.h,
                       ),
-                      backgroundColor: const Color(0xFF7D23E0),
+                      backgroundColor:
+                          const Color(0xFF7D23E0), // Background color
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            12.r), // Responsive border radius
+                        borderRadius: BorderRadius.circular(8.r),
                       ),
                     ),
                     child: Text(
-                      AccountScreenText.addNewStudentButton,
-                      style: TextStyle(fontSize: 14.sp, color: Colors.white),
+                      'Add New Student',
+                      style: theme.textTheme.bodyMedium,
                     ),
                   ),
                 ),
@@ -94,112 +107,129 @@ class TopFaculty extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget buildListItem(
-    BuildContext context,
-    String title,
-    String subtitle,
-    String imagePath,
-  ) {
-    return Card(
-      elevation: 1,
+Widget buildListItem(
+  BuildContext context,
+  String title,
+  String subtitle,
+  String imagePath,
+) {
+  return Card(
+      elevation: 0, // Ensure elevation is 0 to use custom shadow
       color: Colors.white,
       margin: EdgeInsets.all(8.w), // Adjusted for ScreenUtil
-      child: ListTile(
-        leading: CircleAvatar(
-          radius: 30.r, // Adjusted for ScreenUtil
-          backgroundImage: AssetImage(imagePath),
-        ),
-        title: Row(
-          children: [
-            Text(title,
-                style: theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.r), // Adjusted for ScreenUtil
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8.r), // Adjusted for ScreenUtil
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF979797).withOpacity(0.1),
+              offset: Offset(4.w, 4.w), // X and Y offset
+              blurRadius: 4.0, // Adjusted blur radius
+            ),
           ],
-        ),
-        subtitle: Padding(
-          padding: EdgeInsets.only(top: 4.h), // Adjusted for ScreenUtil
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        ), // Adjusted for ScreenUtil
+        child: ListTile(
+          leading: CircleAvatar(
+            radius: 30.r, // Adjusted for ScreenUtil
+            backgroundImage: AssetImage(imagePath),
+          ),
+          title: Row(
             children: [
-              Row(
-                children: [
-                  SvgPicture.asset(
-                    AppImages.award,
-                    height: 14.h,
-                    width: 14.w,
-                  ),
-
-                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
-                  Text(subtitle,
-                      style: theme.textTheme.labelMedium!
-                          .copyWith(fontSize: 12.sp)),
-                ],
-              ),
-              SizedBox(height: 4.h), // Adjusted for ScreenUtil
-              Row(
-                children: [
-                  SvgPicture.asset(
-                    AppImages.book,
-                    height: 14.h,
-                    width: 14.w,
-                  ),
-                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
-                  buildSubtitleContainer(
-                    AccountScreenText.english,
-                    const Color(0xFFE8FFF2),
-                  ),
-                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
-                  buildSubtitleContainer(
-                    AccountScreenText.math,
-                    const Color(0xFFFFEBEB),
-                  ),
-                  SizedBox(width: 4.w), // Adjusted for ScreenUtil
-                  buildSubtitleContainer(
-                    AccountScreenText.science,
-                    const Color(0xFFFFFBEC),
-                  ),
-                ],
-              ),
+              Text(title,
+                  style:
+                      theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
             ],
           ),
-        ),
-        trailing: InkWell(
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const FacultyEditProfile(),
-              ),
-            );
-          },
-          child: SvgPicture.asset(
-            AppImages.edit,
-            height: 24.h,
-            width: 24.w,
-          ),
-        ),
-      ),
-    );
-  }
+          subtitle: Padding(
+            padding: EdgeInsets.only(top: 4.h), // Adjusted for ScreenUtil
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(
+                      AppImages.award,
+                      height: 14.h,
+                      width: 14.w,
+                    ),
 
-  Widget buildSubtitleContainer(String label, Color color) {
-    return Container(
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12.r),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(2.0.sp),
-        child: Center(
-          child: Text(
-            label,
-            style: TextStyle(
-                fontSize: 10.sp,
-                color: const Color(0xFF525251),
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w500),
+                    SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                    Text(subtitle,
+                        style: theme.textTheme.labelMedium!
+                            .copyWith(fontSize: 12.sp)),
+                  ],
+                ),
+                SizedBox(height: 4.h), // Adjusted for ScreenUtil
+                Row(
+                  children: [
+                    Image.asset(
+                      AppImages.book,
+                      height: 14.h,
+                      width: 14.w,
+                    ),
+                    SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                    buildSubtitleContainer(
+                      AccountScreenText.english,
+                      const Color(0xFFE8FFF2),
+                    ),
+                    SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                    buildSubtitleContainer(
+                      AccountScreenText.math,
+                      const Color(0xFFFFEBEB),
+                    ),
+                    SizedBox(width: 4.w), // Adjusted for ScreenUtil
+                    buildSubtitleContainer(
+                      AccountScreenText.science,
+                      const Color(0xFFFFFBEC),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          trailing: InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const FacultyEditProfile(),
+                ),
+              );
+            },
+            child: SvgPicture.asset(
+              AppImages.edit,
+              height: 24.h,
+              width: 24.w,
+            ),
           ),
         ),
+      ));
+}
+
+Widget buildSubtitleContainer(String label, Color color) {
+  return Container(
+    width: 45.w,
+    decoration: BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(12.r),
+    ),
+    child: Padding(
+      padding: EdgeInsets.all(2.0.sp),
+      child: Center(
+        child: Text(
+          label,
+          style: TextStyle(
+              fontSize: 10.sp,
+              color: const Color(0xFF525251),
+              fontFamily: "Avenir",
+              fontWeight: FontWeight.w500),
+        ),
       ),
-    );
-  }
+    ),
+  );
 }

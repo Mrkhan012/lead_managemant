@@ -61,6 +61,8 @@ class AccountScreenText {
       'Add list of toppers from your coaching centre if This adds huge credibility for your institute.';
   static const String profileImage = "Profile Image";
   static const String nameOfFaculty = "Name of the Faculty*";
+  static const String nameOfStdent = "Name of the Student*";
+
   static const String highestQualification = "Highest Qualification";
   static const String selectTheSubject = "Select the Subject";
   static const String emailId = "Email ID";
@@ -93,4 +95,10 @@ class AccountScreenText {
   static const String nameOfStudent = "Name of the Student*";
   static const String schoolName = "School Name";
   static const String percentageMarks = "Percentage/Marks Student got.";
+
+  //  Lead   screen
+
+  static const String kLeadTitle = "Lead Management";
+  static const String kLeadSubtitle =
+      "Students are interested in your coaching! Get back to them!";
 }

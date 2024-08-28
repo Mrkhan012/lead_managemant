@@ -17,12 +17,18 @@ class FacultyEditProfile extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-          ),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
+        ),
+        bottom: PreferredSize(
+          preferredSize:
+              const Size.fromHeight(1.0), // Set height of the divider
+          child: Container(
+            color: const Color(0xFFEEEEEE), // Divider color
+            height: 1.0, // Divider height
+          ),
         ),
       ),
       body: Padding(
@@ -47,31 +53,30 @@ class FacultyEditProfile extends StatelessWidget {
                       child: Stack(
                         children: [
                           CircleAvatar(
-                            radius: 50.r,
-                            backgroundColor: const Color(0xFFFBF7FF),
-                            child: Icon(
-                              CupertinoIcons.photo_on_rectangle,
-                              color: const Color(0xFF7D23E0),
-                              size: 30.sp,
-                            ),
-                          ),
+                              radius: 50.r, // Adjusted with screen_util
+                              backgroundColor: const Color(0xFFFBF7FF),
+                              child: Image.asset(
+                                "assets/icon/gallery.png",
+                                height: 30.h,
+                                width: 30.w,
+                              )),
                           Positioned(
                             bottom: 0,
-                            right: 6.w,
+                            right: 6.w, // Adjusted with screen_util
                             child: CircleAvatar(
                               backgroundColor: const Color(0xFF7D23E0),
-                              radius: 14.r,
+                              radius: 14.r, // Adjusted with screen_util
                               child: Icon(
                                 Icons.add,
                                 color: Colors.white,
-                                size: 14.sp,
+                                size: 14.sp, // Adjusted with screen_util
                               ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    SizedBox(height: 30.h),
                     Text(AccountScreenText.nameOfFaculty,
                         style: theme.textTheme.labelMedium!
                             .copyWith(fontSize: 16.sp)),
@@ -184,7 +189,7 @@ class FacultyEditProfile extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 48.h,
-                  width: 140.w,
+                  width: 160.w,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pop(context); // Close the screen on save
@@ -193,14 +198,21 @@ class FacultyEditProfile extends StatelessWidget {
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.r),
-                        side: const BorderSide(color: Colors.red),
+                        side:
+                            const BorderSide(color: Colors.red), // Border color
                       ),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(Icons.delete, color: Colors.red),
-                        SizedBox(width: 8.w),
+                        Image.asset(
+                          "assets/images/trash.png",
+                          height: 24.h,
+                          width: 24.w,
+                        ),
+                        SizedBox(
+                          width: 8.w,
+                        ), // Spacing between icon and text
                         Text(
                           AccountScreenText.delete,
                           style: TextStyle(
@@ -216,7 +228,7 @@ class FacultyEditProfile extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 48.h,
-                  width: 140.w,
+                  width: 160.w,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pop(context); // Close the screen on save

@@ -22,22 +22,11 @@ Widget buildOption({
     ),
     child: Row(
       children: [
-        Container(
-          width: 35.w,
+        Image.asset(
+          leadingSvgPath,
           height: 35.h,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color(0xFFFAF6FF),
-          ),
-          child: Center(
-            child: SvgPicture.asset(
-              leadingSvgPath,
-              height: 17.h,
-              width: 20.w,
-              fit: BoxFit
-                  .contain, // Ensures the image scales properly within the bounds
-            ),
-          ),
+          width: 35.w,
+          // Ensures the image scales properly within the bounds
         ),
         SizedBox(width: 16.w),
         Expanded(

@@ -1,16 +1,16 @@
 class AppImages {
   static const String profile = 'assets/images/profile.jpg';
-  static const String wallet = 'assets/icon/wallet-3.svg';
-  static const String service = 'assets/icon/service.svg';
-  static const String file = 'assets/icon/file.svg';
-  static const String family = 'assets/icon/family.svg';
-  static const String topper = 'assets/icon/topper.svg';
-  static const String person = 'assets/icon/person.svg';
-  static const String share = 'assets/icon/share.svg';
-  static const String star = 'assets/icon/star.svg';
-  static const String i = 'assets/icon/i.svg';
-  static const String support = 'assets/icon/support.svg';
-  static const String settings = 'assets/icon/settings.svg';
+  static const String wallet = 'assets/images/wallet.png';
+  static const String service = 'assets/images/category.png';
+  static const String file = 'assets/images/manger.png';
+  static const String family = 'assets/images/enrolled.png';
+  static const String topper = 'assets/images/topper.png';
+  static const String person = 'assets/images/faculty.png';
+  static const String share = 'assets/images/shear.png';
+  static const String star = 'assets/images/star.png';
+  static const String i = 'assets/images/i.png';
+  static const String support = 'assets/images/support.png';
+  static const String settings = 'assets/images/setting.png';
   static const String instagram = 'assets/icon/instagram.svg';
   static const String facebook = 'assets/icon/facebook.svg';
   static const String twitter = 'assets/icon/twitter.svg';
@@ -20,6 +20,6 @@ class AppImages {
   static const String livee = 'assets/icon/live.svg';
   static const String leds = 'assets/icon/chart.svg';
   static const String edit = 'assets/icon/edit-2.svg';
-  static const String book = 'assets/icon/book.svg';
-  static const String award = 'assets/icon/award.svg';
+  static const String book = 'assets/icon/book.png';
+  static const String award = 'assets/icon/award.png';
 }

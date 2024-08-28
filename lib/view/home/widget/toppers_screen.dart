@@ -22,6 +22,14 @@ class ToppersScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
+        bottom: PreferredSize(
+          preferredSize:
+              const Size.fromHeight(1.0), // Set height of the divider
+          child: Container(
+            color: const Color(0xFFEEEEEE), // Divider color
+            height: 1.0, // Divider height
+          ),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(8.0.w), // Adjusted for ScreenUtil
@@ -32,7 +40,7 @@ class ToppersScreen extends StatelessWidget {
               padding: EdgeInsets.only(left: 8.0.w),
               child: Text(
                 AccountScreenText.kTopperTitle,
-                style: theme.textTheme.labelMedium!.copyWith(
+                style: theme.textTheme.bodyLarge!.copyWith(
                   fontSize: 20.sp, // Responsive font size
                   fontWeight: FontWeight.w700,
                 ),
@@ -48,7 +56,7 @@ class ToppersScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 12.h),
             ListView.builder(
               shrinkWrap: true,
               itemCount: 2,

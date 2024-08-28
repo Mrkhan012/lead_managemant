@@ -145,7 +145,7 @@ class TextThemes {
         ),
         bodySmall: const TextStyle(
           fontSize: 14,
-          fontFamily: 'avenir',
+          fontFamily: 'aven',
           fontWeight: FontWeight.w500,
           color: Color(0xFFA7A8A8),
         ),
