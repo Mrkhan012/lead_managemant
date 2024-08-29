@@ -9,6 +9,8 @@ import 'package:lead_management/view/Account/refer_earn.dart';
 import 'package:lead_management/view/Account/widget/build_account.dart';
 import 'package:lead_management/view/Account/widget/build_option.dart';
 import 'package:lead_management/view/Account/widget/build_socail.dart';
+import 'package:lead_management/view/Account/widget/payment.dart';
+import 'package:lead_management/view/home/widget/Enrolled_tuden.dart';
 import 'package:lead_management/view/home/widget/help_support_screen.dart';
 import 'package:lead_management/view/home/widget/manage_account.dart';
 import 'package:lead_management/view/home/widget/top_faculty.dart';
@@ -64,6 +66,31 @@ class HomePage extends StatelessWidget {
                 subtitle: AccountScreenText.joinedDate,
                 imagePath: AppImages.profile,
               ),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Payment(),
+                  ));
+                },
+                child: buildOption(
+                  title: AccountScreenText.walletTitle,
+                  subtitle: AccountScreenText.walletSubtitle,
+                  trailingIcon: CupertinoIcons.forward,
+                  borderColor: const Color(0xFFDDBEFF),
+                  leadingSvgPath: AppImages.wallet,
+                ),
+              ),
+              SizedBox(
+                height: 24.h,
+              ),
+
+              buildOption(
+                title: AccountScreenText.bathes,
+                subtitle: AccountScreenText.kbatces,
+                leadingSvgPath: AppImages.file,
+                trailingIcon: CupertinoIcons.forward,
+                showAdditionalRow: true, // Set showAdditionalRow to true here
+              ),
 
               // Section for Manage Courses card
               InkWell(
@@ -88,14 +115,35 @@ class HomePage extends StatelessWidget {
                 trailingIcon: CupertinoIcons.forward,
               ),
 
+              buildOption(
+                title: AccountScreenText.kPayment,
+                subtitle: AccountScreenText.kPaymentSub,
+                leadingSvgPath: AppImages.service,
+                trailingIcon: CupertinoIcons.forward,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Divider(
+                  color: const Color(0xFFEEEEEE),
+                  thickness: 1.r, // Responsive thickness
+                ),
+              ),
+
               SizedBox(height: 20.h), // Responsive height
 
               // Section for Enrolled Students card
-              buildOption(
-                title: AccountScreenText.enrolledStudentsTitle,
-                subtitle: AccountScreenText.enrolledStudentsSubtitle,
-                leadingSvgPath: AppImages.family,
-                trailingIcon: CupertinoIcons.forward,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const EnrolledTuden(),
+                  ));
+                },
+                child: buildOption(
+                  title: AccountScreenText.enrolledStudentsTitle,
+                  subtitle: AccountScreenText.enrolledStudentsSubtitle,
+                  leadingSvgPath: AppImages.family,
+                  trailingIcon: CupertinoIcons.forward,
+                ),
               ),
 
               // Section for Topper Students card
@@ -129,7 +177,13 @@ class HomePage extends StatelessWidget {
                   trailingIcon: CupertinoIcons.forward,
                 ),
               ),
-
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Divider(
+                  color: const Color(0xFFEEEEEE),
+                  thickness: 1.r, // Responsive thickness
+                ),
+              ),
               SizedBox(height: 20.h), // Responsive height
 
               // Section for Refer and Earn card
@@ -147,28 +201,12 @@ class HomePage extends StatelessWidget {
                 ),
               ),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
-                child: Divider(
-                  color: const Color(0xFFEEEEEE),
-                  thickness: 1.r, // Responsive thickness
-                ),
-              ),
-
               // Section for Rate Us card
               buildOption(
                 title: AccountScreenText.rateUsTitle,
                 subtitle: AccountScreenText.rateUsSubtitle,
                 leadingSvgPath: AppImages.star,
                 trailingIcon: CupertinoIcons.forward,
-              ),
-
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
-                child: Divider(
-                  color: const Color(0xFFEEEEEE),
-                  thickness: 1.r, // Responsive thickness
-                ),
               ),
 
               // Section for About Ostello AI card
@@ -179,44 +217,36 @@ class HomePage extends StatelessWidget {
                 trailingIcon: CupertinoIcons.forward,
               ),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
-                child: Divider(
-                  color: const Color(0xFFEEEEEE),
-                  thickness: 1.r, // Responsive thickness
-                ),
-              ),
+              // // Section for Help and Support card
+              // InkWell(
+              //   onTap: () {
+              //     Navigator.of(context).push(MaterialPageRoute(
+              //       builder: (context) => const HelpSupportScreen(),
+              //     ));
+              //   },
+              //   child: buildOption(
+              //     title: AccountScreenText.helpSupportTitle,
+              //     subtitle: AccountScreenText.helpSupportSubtitle,
+              //     leadingSvgPath: AppImages.support,
+              //     trailingIcon: CupertinoIcons.forward,
+              //   ),
+              // ),
 
-              // Section for Help and Support card
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const HelpSupportScreen(),
-                  ));
-                },
-                child: buildOption(
-                  title: AccountScreenText.helpSupportTitle,
-                  subtitle: AccountScreenText.helpSupportSubtitle,
-                  leadingSvgPath: AppImages.support,
-                  trailingIcon: CupertinoIcons.forward,
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 40.w),
+              //   child: Divider(
+              //     color: const Color(0xFFEEEEEE),
+              //     thickness: 1.r, // Responsive thickness
+              //   ),
+              // ),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40.w),
-                child: Divider(
-                  color: const Color(0xFFEEEEEE),
-                  thickness: 1.r, // Responsive thickness
-                ),
-              ),
-
-              // Section for Manage Account card
-              buildOption(
-                title: AccountScreenText.manageAccountTitle,
-                subtitle: AccountScreenText.manageAccountSubtitle,
-                leadingSvgPath: AppImages.settings,
-                trailingIcon: CupertinoIcons.forward,
-              ),
+              // // Section for Manage Account card
+              // buildOption(
+              //   title: AccountScreenText.manageAccountTitle,
+              //   subtitle: AccountScreenText.manageAccountSubtitle,
+              //   leadingSvgPath: AppImages.settings,
+              //   trailingIcon: CupertinoIcons.forward,
+              // ),
 
               Divider(
                 color: const Color(0xFFEEEEEE),

@@ -11,6 +11,11 @@ class AccountScreenText {
   static const String manageCoursesTitle = 'Manage Courses';
   static const String manageCoursesSubtitle = 'Add, Edit & View Courses';
   static const String categoryServicesTitle = 'Category & Services';
+  static const String kPaymentSub = 'All Payments & Taxes';
+
+  static const String bathes = 'Batches';
+  static const String kbatces = 'Add, Remove & Create';
+
   static const String categoryServicesSubtitle = 'Address, Category & more...';
   static const String enrolledStudentsTitle = 'Enrolled Students';
   static const String enrolledStudentsSubtitle =
@@ -19,6 +24,10 @@ class AccountScreenText {
   static const String topperStudentSubtitle =
       'Add top students in your institute';
   static const String facultyTitle = 'Faculty';
+  static const String enrollTitle = 'Enrolled Student (100)';
+
+  static const String kPayment = 'Payment';
+
   static const String facultySubtitle = 'Add faculty in your institute';
   static const String referEarnTitle = 'Refer & Earn';
   static const String referEarnSubtitle = 'Name, E-Mail,phone number address';
@@ -88,7 +97,7 @@ class AccountScreenText {
   static const String afrzPathan = 'Afrz Pathan';
   static const String highestCGPA = '70% CGPA';
   static const String english = 'English';
-  static const String math = 'Math';
+  static const String math = 'Maths';
   static const String science = 'Science';
 
   // TopperProfileEdit screen

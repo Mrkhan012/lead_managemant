@@ -22,4 +22,5 @@ class AppImages {
   static const String edit = 'assets/icon/edit-2.svg';
   static const String book = 'assets/icon/book.png';
   static const String award = 'assets/icon/award.png';
+  static const String teacher = 'assets/images/teacher.png';
 }

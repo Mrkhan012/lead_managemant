@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
 import 'package:lead_management/view/home/widget/topper_profile_edit.dart';
@@ -31,50 +29,51 @@ class ToppersScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(8.0.w), // Adjusted for ScreenUtil
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 8.0.w),
-              child: Text(
-                AccountScreenText.kTopperTitle,
-                style: theme.textTheme.bodyLarge!.copyWith(
-                  fontSize: 20.sp, // Responsive font size
-                  fontWeight: FontWeight.w700,
-                ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 16.w, top: 12.h),
+            child: Text(
+              AccountScreenText.kTopperTitle,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                fontSize: 20.sp, // Responsive font size
+                fontWeight: FontWeight.w700,
               ),
             ),
-            SizedBox(height: 8.h),
-            Padding(
-              padding: EdgeInsets.only(left: 8.0.w),
-              child: Text(
-                AccountScreenText.kTopperSubtitle,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  fontSize: 14.sp,
-                ),
+          ),
+          SizedBox(height: 8.h),
+          Padding(
+            padding: EdgeInsets.only(left: 16.0.w),
+            child: Text(
+              AccountScreenText.kTopperSubtitle,
+              style: theme.textTheme.bodySmall!.copyWith(
+                fontSize: 14.sp,
               ),
             ),
-            SizedBox(height: 12.h),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 2,
-              itemBuilder: (context, index) {
-                final titles = [
-                  'Pathan Afroz',
-                  'Afroz Pathan',
-                ];
-                return buildListItem(
-                  context,
-                  titles[index],
-                  '70% CPG',
-                  'assets/images/pro.jpg',
-                );
-              },
-            ),
-            const Spacer(),
-            Center(
+          ),
+          SizedBox(height: 12.h),
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: 2,
+            itemBuilder: (context, index) {
+              final titles = [
+                'Pathan Afroz',
+                'Afroz Pathan',
+              ];
+              return buildListItem(
+                context,
+                titles[index],
+                '70% CPG',
+                'assets/images/pro.jpg',
+              );
+            },
+          ),
+          const Spacer(),
+          Container(
+            height: 64.h,
+            color: Colors.white,
+            child: Center(
               child: Padding(
                 padding: EdgeInsets.only(left: 12.w, right: 12.w),
                 child: SizedBox(
@@ -105,8 +104,8 @@ class ToppersScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

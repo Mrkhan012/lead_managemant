@@ -7,8 +7,8 @@ import 'package:lead_management/utils/theme.dart';
 import 'package:lead_management/view/Account/widget/custom_textfrom.dart';
 import 'package:lead_management/view/home/widget/faculty_edit_profile.dart';
 
-class TopFaculty extends StatelessWidget {
-  const TopFaculty({super.key});
+class EnrolledTuden extends StatelessWidget {
+  const EnrolledTuden({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class TopFaculty extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          AccountScreenText.facultyTitle,
+          AccountScreenText.enrollTitle,
           style: theme.textTheme.labelMedium!
               .copyWith(fontSize: 18.sp, fontWeight: FontWeight.w700),
         ),
@@ -43,6 +43,75 @@ class TopFaculty extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 16.h),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 34,
+                          width: 69,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF7D23E0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Online",
+                              style: theme.textTheme.bodySmall!.copyWith(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                              // Align text entered in TextField to center
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Container(
+                          height: 34,
+                          width: 69,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xFFE3E3E3)),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Ofline",
+                              style: theme.textTheme.bodySmall!.copyWith(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color(0xFF3E3843)),
+                              // Align text entered in TextField to center
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Container(
+                          height: 34,
+                          width: 69,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xFFE3E3E3)),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Hybrid",
+                              style: theme.textTheme.bodySmall!.copyWith(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color(0xFF3E3843)),
+                              // Align text entered in TextField to center
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(height: 10.h),
                   Center(
                     child: Padding(
@@ -78,36 +147,32 @@ class TopFaculty extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: 64.h,
-            color: Colors.white,
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.only(left: 12.w, right: 12.w),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const FacultyEditProfile(),
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 16.h,
+          Center(
+            child: Padding(
+              padding: EdgeInsets.only(left: 12.w, right: 12.w),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const FacultyEditProfile(),
                       ),
-                      backgroundColor:
-                          const Color(0xFF7D23E0), // Background color
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.r),
-                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16.h,
                     ),
-                    child: Text(
-                      'Add New Faculty',
-                      style: theme.textTheme.bodyMedium,
+                    backgroundColor:
+                        const Color(0xFF7D23E0), // Background color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.r),
                     ),
+                  ),
+                  child: Text(
+                    'Add New Faculty',
+                    style: theme.textTheme.bodyMedium,
                   ),
                 ),
               ),

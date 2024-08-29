@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lead_management/main.dart';
 import 'package:lead_management/utils/theme.dart';
 
 Widget buildAccountCard({

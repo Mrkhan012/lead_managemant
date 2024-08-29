@@ -109,7 +109,6 @@ Widget buildListItem(
 
 Widget buildSubtitleContainer(String label, Color color) {
   return Container(
-    width: 45.w,
     decoration: BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(12.r),
