@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
-import 'package:lead_management/view/home/widget/email_screen.dart'; // Import your screen utils
+import 'package:lead_management/view/Account/email_screen.dart'; // Import your screen utils
 
 class ManageAccount extends StatelessWidget {
   const ManageAccount({super.key});

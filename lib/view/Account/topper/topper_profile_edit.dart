@@ -1,14 +1,12 @@
-// faculty_edit_profile.dart
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lead_management/utils/text.dart';
 import 'package:lead_management/utils/theme.dart';
-import 'package:lead_management/view/home/widget/cutom_textfrom.dart';
+import 'package:lead_management/view/Account/widget/cutom_textfrom.dart';
 
-class FacultyEditProfile extends StatelessWidget {
-  const FacultyEditProfile({super.key});
+class TopperProfileEdit extends StatelessWidget {
+  const TopperProfileEdit({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,23 +30,24 @@ class FacultyEditProfile extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(12.0.w), // Adjusted with screen_util
+        padding: EdgeInsets.all(12.w),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
-                      child: Text(AccountScreenText.profileImage,
-                          style: theme.textTheme.bodyLarge!
-                              .copyWith(fontSize: 16.sp)),
+                      child: Text(
+                        AccountScreenText.profileImage,
+                        style: theme.textTheme.bodyLarge!
+                            .copyWith(fontSize: 16.sp),
+                      ),
                     ),
-                    SizedBox(
-                      height: 8.h,
-                    ),
+                    SizedBox(height: 8.h),
                     Center(
                       child: Stack(
                         children: [
@@ -77,109 +76,59 @@ class FacultyEditProfile extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 30.h),
-                    Text(AccountScreenText.nameOfFaculty,
-                        style: theme.textTheme.labelMedium!
-                            .copyWith(fontSize: 16.sp)),
-                    SizedBox(height: 12.h),
-                    CustomTextFormField(
-                      hintText: 'Name',
-                      onChanged: (value) {
-                        print('Name: $value');
-                      },
+                    Text(
+                      AccountScreenText.nameOfStdent,
+                      style: theme.textTheme.bodyLarge!
+                          .copyWith(fontSize: 16.sp, fontFamily: "avenir"),
                     ),
-                    SizedBox(height: 12.h),
-                    Text(AccountScreenText.highestQualification,
-                        style: theme.textTheme.labelMedium!
-                            .copyWith(fontSize: 16.sp)),
-                    SizedBox(height: 12.h),
+                    SizedBox(height: 10.h),
                     CustomTextFormField(
-                      hintText: 'Course Name',
-                      onChanged: (value) {
-                        print('Name: $value');
-                      },
+                      hintText: AccountScreenText.nameOfFaculty,
+                      onChanged: (value) {},
+                    ),
+                    SizedBox(height: 14.h),
+                    Text(
+                      AccountScreenText.schoolName,
+                      style: theme.textTheme.bodyLarge!
+                          .copyWith(fontSize: 16.sp, fontFamily: "avenir"),
+                    ),
+                    SizedBox(height: 10.h),
+                    CustomTextFormField(
+                      hintText: AccountScreenText.schoolName,
+                      onChanged: (value) {},
+                    ),
+                    SizedBox(height: 14.h),
+                    Text(
+                      AccountScreenText.percentageMarks,
+                      style: theme.textTheme.bodyLarge!
+                          .copyWith(fontSize: 16.sp, fontFamily: "avenir"),
+                    ),
+                    SizedBox(height: 10.h),
+                    CustomTextFormField(
+                      hintText: 'Percentage',
+                      onChanged: (value) {},
+                    ),
+                    SizedBox(height: 14.h),
+                    Text(
+                      AccountScreenText.selectSubject,
+                      style: theme.textTheme.bodyLarge!
+                          .copyWith(fontSize: 16.sp, fontFamily: "avenir"),
+                    ),
+                    SizedBox(height: 10.h),
+                    CustomTextFormField(
+                      hintText: AccountScreenText.selectSubject,
+                      onChanged: (value) {},
                       suffixIcon: CupertinoButton(
                         padding: EdgeInsets.zero,
-                        child: Icon(
+                        child: const Icon(
                           CupertinoIcons.chevron_down,
                           color: Colors.black,
-                          size: 16.sp,
                         ),
                         onPressed: () {
                           showBottomSheet(context);
                         },
                       ),
                     ),
-                    SizedBox(height: 12.h),
-                    Text(AccountScreenText.selectTheSubject,
-                        style: theme.textTheme.labelMedium!
-                            .copyWith(fontSize: 16.sp)),
-                    SizedBox(height: 12.h),
-                    CustomTextFormField(
-                      hintText: 'Subject',
-                      onChanged: (value) {
-                        print('Name: $value');
-                      },
-                      suffixIcon: CupertinoButton(
-                        padding: EdgeInsets.zero,
-                        child: Icon(
-                          CupertinoIcons.chevron_down,
-                          color: Colors.black,
-                          size: 16.sp,
-                        ),
-                        onPressed: () {
-                          showBottomSheet(context);
-                        },
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
-                    Text(AccountScreenText.emailId,
-                        style: theme.textTheme.labelMedium!
-                            .copyWith(fontSize: 16.sp)),
-                    SizedBox(height: 12.h),
-                    CustomTextFormField(
-                      hintText: 'Enter Email',
-                      onChanged: (value) {
-                        print('Name: $value');
-                      },
-                    ),
-                    SizedBox(height: 12.h),
-                    Text(AccountScreenText.mobileNumber,
-                        style: theme.textTheme.labelMedium!
-                            .copyWith(fontSize: 16.sp)),
-                    SizedBox(height: 12.h),
-                    CustomTextFormField(
-                      hintText: '+91 0000000000',
-                      onChanged: (value) {
-                        print('Name: $value');
-                      },
-                    ),
-                    SizedBox(height: 12.h),
-                    Text(AccountScreenText.description,
-                        style: theme.textTheme.labelMedium!
-                            .copyWith(fontSize: 16.sp)),
-                    SizedBox(height: 12.h),
-                    Container(
-                      width: double.infinity,
-                      height: 120.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12.r),
-                        color: Colors.white,
-                        border: Border.all(color: const Color(0xFFEEEEEE)),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0.w),
-                        child: Text(
-                          AccountScreenText.startWritingDescription,
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 12.h,
-                    )
                   ],
                 ),
               ),
@@ -275,19 +224,20 @@ class FacultyEditProfile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AccountScreenText.selectSubject,
-                  style:
-                      theme.textTheme.labelMedium!.copyWith(fontSize: 18.sp)),
-              SizedBox(
-                height: 8.h,
+              Text(
+                AccountScreenText.selectSubject,
+                style: theme.textTheme.labelMedium!.copyWith(fontSize: 18.sp),
               ),
-              for (String item in AccountScreenText.subjectItems)
-                Column(
-                  children: [
-                    _buildItem(item),
-                    const Divider(),
-                  ],
-                ),
+              SizedBox(height: 8.h),
+              _buildItem(AccountScreenText.subjectItems[0]),
+              const Divider(),
+              _buildItem(AccountScreenText.subjectItems[1]),
+              const Divider(),
+              _buildItem(AccountScreenText.subjectItems[2]),
+              const Divider(),
+              _buildItem(AccountScreenText.subjectItems[3]),
+              const Divider(),
+              _buildItem(AccountScreenText.subjectItems[4]),
             ],
           ),
         );
@@ -298,10 +248,8 @@ class FacultyEditProfile extends StatelessWidget {
   Widget _buildItem(String text) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
-      child: Text(
-        text,
-        style: theme.textTheme.labelMedium!.copyWith(fontSize: 16.sp),
-      ),
+      child: Text(text,
+          style: theme.textTheme.labelMedium!.copyWith(fontSize: 14.sp)),
     );
   }
 }

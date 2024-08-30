@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lead_management/utils/theme.dart';
-import 'package:lead_management/view/home/widget/cutom_textfrom.dart';
+import 'package:lead_management/view/Account/widget/cutom_textfrom.dart';
 
 class EmailScreen extends StatelessWidget {
   const EmailScreen({super.key});

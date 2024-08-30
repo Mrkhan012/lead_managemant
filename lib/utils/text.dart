@@ -12,6 +12,9 @@ class AccountScreenText {
   static const String manageCoursesSubtitle = 'Add, Edit & View Courses';
   static const String categoryServicesTitle = 'Category & Services';
   static const String kPaymentSub = 'All Payments & Taxes';
+  static const String chat = 'Chats';
+  static const String manageStore = 'Manage Store';
+  static const String manageStoresub = 'Add, Edit & Remove';
 
   static const String bathes = 'Batches';
   static const String kbatces = 'Add, Remove & Create';
@@ -27,6 +30,8 @@ class AccountScreenText {
   static const String enrollTitle = 'Enrolled Student (100)';
 
   static const String kPayment = 'Payment';
+  static const String kStore = 'Store (100)';
+  static const String kaddNew = 'Add New';
 
   static const String facultySubtitle = 'Add faculty in your institute';
   static const String referEarnTitle = 'Refer & Earn';
@@ -71,6 +76,16 @@ class AccountScreenText {
   static const String profileImage = "Profile Image";
   static const String nameOfFaculty = "Name of the Faculty*";
   static const String nameOfStdent = "Name of the Student*";
+  static const String kAddNew = "Tittle";
+  static const String kAdd = "Name";
+  static const String kAddCateogry = "Category";
+  static const String kAddSlCateogry = "Select Category";
+  static const String kAddSubject = "Subject";
+  static const String kAddPrice = "Price";
+  static const String kAddRupee = "₹";
+  static const String kAddOffer = "Offer";
+  static const String kAddOfferr = "50%";
+  static const String kAddDec = "Add Description";
 
   static const String highestQualification = "Highest Qualification";
   static const String selectTheSubject = "Select the Subject";

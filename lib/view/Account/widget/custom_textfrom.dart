@@ -5,11 +5,15 @@ import 'package:lead_management/utils/theme.dart';
 class SearchField extends StatelessWidget {
   final TextEditingController controller;
   final ValueChanged onChanged;
+  final Color backgroundColor;
+  final Color borderColor;
 
   const SearchField({
     super.key,
     required this.controller,
     required this.onChanged,
+    this.backgroundColor = const Color(0xFFFAF6FF), // Default background color
+    this.borderColor = const Color(0xFFE7D2FF), // Default border color
   });
 
   @override
@@ -19,8 +23,8 @@ class SearchField extends StatelessWidget {
       width: 328.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(width: 1, color: const Color(0xFFE7D2FF)),
-        color: const Color(0xFFFAF6FF),
+        border: Border.all(width: 1, color: borderColor),
+        color: backgroundColor,
       ),
       child: Center(
         child: TextField(

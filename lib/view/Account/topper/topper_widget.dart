@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lead_management/utils/assets.dart';
 import 'package:lead_management/utils/theme.dart';
-import 'package:lead_management/view/home/widget/topper_profile_edit.dart';
+import 'package:lead_management/view/Account/topper/topper_profile_edit.dart';
 
 Widget buildListItem(
   BuildContext context,
